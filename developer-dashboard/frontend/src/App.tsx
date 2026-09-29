@@ -12,6 +12,7 @@ import Learning from "./pages/Learning"
 import Expenses from "./pages/Expenses"
 import ExpenseAnalytics from "./pages/ExpenseAnalytics"
 import Notes from "./pages/Notes"
+import Jobs from "./pages/Jobs"
 import bgImage from "@/assets/background.png"
 
 function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -35,28 +36,40 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
         <div className="relative z-10 flex w-full">
           <AppSidebar />
           <div className="flex-1 flex flex-col min-w-0">
-            <header className="sticky top-0 z-50 flex h-16 items-center gap-4 bg-white px-6 border-b border-gray-100">
-              <SidebarTrigger className="text-gray-600 hover:text-[#0B1F3A]" />
-              <form onSubmit={handleSearch} className="flex items-center gap-3 text-sm text-gray-500 bg-[#F5F3EA] px-5 py-2 rounded-full flex-1 max-w-md shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.9)] border border-transparent ml-2">
+            <header className="sticky top-0 z-50 flex h-[72px] items-center gap-4 bg-white/70 backdrop-blur-xl px-8 border-b border-white/50 shadow-[0_4px_30px_rgba(0,0,0,0.02)]">
+              <SidebarTrigger className="text-gray-500 hover:text-[#0B1F3A] hover:bg-white rounded-lg transition-all p-2 -ml-2" />
+              
+              <form onSubmit={handleSearch} className="flex items-center gap-3 text-sm text-gray-500 bg-[#F5F3EA] px-5 py-2 rounded-full flex-1 max-w-md shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.9)] border border-transparent ml-4">
                 <Search className="h-4 w-4 opacity-70 flex-shrink-0" />
                 <input 
                   type="text" 
                   placeholder="Search anything..." 
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="bg-transparent border-none outline-none flex-1 text-gray-700 placeholder-gray-400 w-full"
+                  className="bg-transparent border-none outline-none flex-1 text-gray-700 placeholder-gray-400 w-full font-medium"
                 />
               </form>
-              <div className="ml-auto flex items-center gap-6">
-                <button className="relative text-gray-500 hover:text-[#0B1F3A] transition-colors">
-                  <Bell className="h-5 w-5" />
-                  <span className="absolute -top-0.5 -right-0.5 h-2 w-2 rounded-full bg-red-500 border border-white" />
+
+              <div className="ml-auto flex items-center gap-5">
+                <button className="relative h-10 w-10 rounded-full bg-white hover:bg-gray-50 flex items-center justify-center text-gray-500 hover:text-[#0B1F3A] transition-all border border-gray-200/80 shadow-sm">
+                  <Bell className="h-[18px] w-[18px]" />
+                  <span className="absolute top-2.5 right-2.5 h-2 w-2 rounded-full bg-red-500 border-2 border-white" />
                 </button>
-                <div className="h-8 w-8 rounded-full bg-[#0B1F3A] flex items-center justify-center text-white font-bold text-xs shadow-sm">
-                  SP
+                
+                <div className="h-8 w-px bg-gray-200/80 hidden sm:block"></div>
+                
+                <div className="flex items-center gap-3 cursor-pointer group">
+                  <div className="text-right hidden sm:block">
+                    <p className="text-[13px] font-bold text-[#0B1F3A] leading-tight group-hover:text-[#D4AF37] transition-colors">Developer</p>
+                    <p className="text-[11px] text-gray-400 font-bold">Pro Workspace</p>
+                  </div>
+                  <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-[#0B1F3A] to-[#163D63] flex items-center justify-center text-white font-bold text-sm shadow-md ring-2 ring-white group-hover:ring-[#D4AF37]/50 transition-all">
+                    SP
+                  </div>
                 </div>
-                <button className="text-sm font-bold text-gray-600 flex items-center gap-2 hover:text-[#0B1F3A] transition-colors">
-                  <LogOut className="h-4 w-4" /> Logout
+
+                <button className="h-10 w-10 rounded-full bg-red-50/50 hover:bg-red-50 flex items-center justify-center text-red-500/80 hover:text-red-600 transition-all ml-1 border border-red-100/50" title="Logout">
+                  <LogOut className="h-[18px] w-[18px]" />
                 </button>
               </div>
             </header>
@@ -157,6 +170,10 @@ export default function App() {
         
         <Route path="/notes" element={
           isAuthenticated ? <DashboardLayout><Notes /></DashboardLayout> : <Navigate to="/login" />
+        } />
+        
+        <Route path="/jobs" element={
+          isAuthenticated ? <DashboardLayout><Jobs /></DashboardLayout> : <Navigate to="/login" />
         } />
         
         <Route path="/settings" element={

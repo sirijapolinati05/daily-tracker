@@ -30,7 +30,7 @@ export default function LeetCodeTracker() {
               <Code2 className="h-6 w-6 drop-shadow-sm" />
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-blue-600">124</h3>
+              <h3 className="text-3xl font-bold text-[#0B1F3A]">124</h3>
               <p className="text-xs text-gray-500">Total Solved</p>
               <p className="text-[10px] text-green-500 font-medium mt-1 whitespace-nowrap">↑ +12 from last month</p>
             </div>
@@ -57,7 +57,7 @@ export default function LeetCodeTracker() {
               <Target className="h-6 w-6 drop-shadow-sm" />
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-green-500">68</h3>
+              <h3 className="text-3xl font-bold text-[#0B1F3A]">68</h3>
               <p className="text-xs text-gray-500">Easy</p>
               <p className="text-[10px] text-green-500 font-medium mt-1 whitespace-nowrap">↑ +6 from last month</p>
             </div>
@@ -84,7 +84,7 @@ export default function LeetCodeTracker() {
               <BarChart2 className="h-6 w-6 drop-shadow-sm" />
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-yellow-600">42</h3>
+              <h3 className="text-3xl font-bold text-[#0B1F3A]">42</h3>
               <p className="text-xs text-gray-500">Medium</p>
               <p className="text-[10px] text-green-500 font-medium mt-1 whitespace-nowrap">↑ +4 from last month</p>
             </div>
@@ -111,7 +111,7 @@ export default function LeetCodeTracker() {
               <Trophy className="h-6 w-6 drop-shadow-sm" />
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-red-500">14</h3>
+              <h3 className="text-3xl font-bold text-[#0B1F3A]">14</h3>
               <p className="text-xs text-gray-500">Hard</p>
               <p className="text-[10px] text-green-500 font-medium mt-1 whitespace-nowrap">↑ +2 from last month</p>
             </div>

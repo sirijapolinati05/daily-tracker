@@ -79,20 +79,20 @@ export default function CodingCalendar() {
       {/* 4 Stat Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 relative z-10">
         {/* Total Days Coded */}
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 shadow-sm border border-blue-200/50 flex flex-col justify-between rounded-[20px]">
+        <div className="bg-gradient-to-br from-blue-50/60 to-white p-5 shadow-sm border border-gray-100 flex flex-col justify-between rounded-[24px] h-32">
           <div className="flex justify-between items-start w-full">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 shrink-0 rounded-full bg-blue-500 flex items-center justify-center text-white shadow-[4px_4px_10px_rgba(59,130,246,0.3)] border border-blue-400">
-                <Code2 className="h-5 w-5 drop-shadow-sm" />
+              <div className="w-12 h-12 rounded-[16px] badge-3d-blue flex items-center justify-center text-blue-600 shrink-0">
+                <Code2 className="h-6 w-6" />
               </div>
               <div>
-                <p className="text-xs font-bold text-blue-400">Total Days Coded</p>
-                <h3 className="text-2xl font-bold text-blue-700">142</h3>
+                <p className="text-xs font-bold text-gray-500">Total Days Coded</p>
+                <h3 className="text-3xl font-bold text-[#0B1F3A]">142</h3>
               </div>
             </div>
           </div>
           <div className="flex justify-between items-end mt-2">
-            <p className="text-[11px] font-bold text-blue-400"><span className="text-green-500">↑ +18%</span> this year</p>
+            <p className="text-[11px] font-bold text-gray-400"><span className="text-green-500">↑ +18%</span> this year</p>
             <div className="h-8 w-20">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={sparklineBlue}>
@@ -104,20 +104,20 @@ export default function CodingCalendar() {
         </div>
 
         {/* Total Hours */}
-        <div className="bg-gradient-to-br from-emerald-50 to-green-100 p-4 shadow-sm border border-green-200/50 flex flex-col justify-between rounded-[20px]">
+        <div className="bg-gradient-to-br from-emerald-50/60 to-white p-5 shadow-sm border border-gray-100 flex flex-col justify-between rounded-[24px] h-32">
           <div className="flex justify-between items-start w-full">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 shrink-0 rounded-full bg-emerald-500 flex items-center justify-center text-white shadow-[4px_4px_10px_rgba(34,197,94,0.3)] border border-emerald-400">
-                <Clock className="h-5 w-5 drop-shadow-sm" />
+              <div className="w-12 h-12 rounded-[16px] badge-3d-green flex items-center justify-center text-green-600 shrink-0">
+                <Clock className="h-6 w-6" />
               </div>
               <div>
-                <p className="text-xs font-bold text-emerald-400">Total Hours</p>
-                <h3 className="text-2xl font-bold text-emerald-700">286h</h3>
+                <p className="text-xs font-bold text-gray-500">Total Hours</p>
+                <h3 className="text-3xl font-bold text-[#0B1F3A]">286h</h3>
               </div>
             </div>
           </div>
           <div className="flex justify-between items-end mt-2">
-            <p className="text-[11px] font-bold text-emerald-400"><span className="text-green-600">↑ +22%</span> this year</p>
+            <p className="text-[11px] font-bold text-gray-400"><span className="text-green-600">↑ +22%</span> this year</p>
             <div className="h-8 w-20">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={sparklineGreen}>
@@ -129,24 +129,24 @@ export default function CodingCalendar() {
         </div>
 
         {/* Current Streak */}
-        <div className="bg-gradient-to-br from-amber-50 to-yellow-100 p-4 shadow-sm border border-yellow-200/50 flex flex-col justify-between rounded-[20px]">
+        <div className="bg-gradient-to-br from-yellow-50/60 to-white p-5 shadow-sm border border-gray-100 flex flex-col justify-between rounded-[24px] h-32">
           <div className="flex justify-between items-start w-full">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 shrink-0 rounded-full bg-amber-400 flex items-center justify-center text-white shadow-[4px_4px_10px_rgba(245,158,11,0.3)] border border-amber-300">
-                <Trophy className="h-5 w-5 drop-shadow-sm" />
+              <div className="w-12 h-12 rounded-[16px] badge-3d-yellow flex items-center justify-center text-yellow-600 shrink-0">
+                <Trophy className="h-6 w-6" />
               </div>
               <div>
-                <p className="text-xs font-bold text-amber-400">Current Streak</p>
-                <h3 className="text-2xl font-bold text-amber-700">12 Days</h3>
+                <p className="text-xs font-bold text-gray-500">Current Streak</p>
+                <h3 className="text-3xl font-bold text-[#0B1F3A]">12 Days</h3>
               </div>
             </div>
           </div>
           <div className="flex justify-between items-end mt-2">
-            <p className="text-[11px] font-bold text-amber-400"><span className="text-green-500">↑ +3</span> from last week</p>
+            <p className="text-[11px] font-bold text-gray-400"><span className="text-green-500">↑ +3</span> from last week</p>
             <div className="h-8 w-20">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={sparklineGold}>
-                  <Bar dataKey="v" fill="#F59E0B" radius={[2,2,0,0]} />
+                  <Bar dataKey="v" fill="#eab308" radius={[2,2,0,0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -154,20 +154,20 @@ export default function CodingCalendar() {
         </div>
 
         {/* Longest Streak */}
-        <div className="bg-gradient-to-br from-purple-50 to-violet-100 p-4 shadow-sm border border-purple-200/50 flex flex-col justify-between rounded-[20px]">
-          <div className="flex justify-between items-start w-full relative">
+        <div className="bg-gradient-to-br from-purple-50/60 to-white p-5 shadow-sm border border-gray-100 flex flex-col justify-between rounded-[24px] h-32">
+          <div className="flex justify-between items-start w-full">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 shrink-0 rounded-full bg-purple-500 flex items-center justify-center text-white shadow-[4px_4px_10px_rgba(168,85,247,0.3)] border border-purple-400">
-                <Target className="h-5 w-5 drop-shadow-sm" />
+              <div className="w-12 h-12 rounded-[16px] badge-3d-purple flex items-center justify-center text-purple-600 shrink-0">
+                <Target className="h-6 w-6" />
               </div>
               <div>
-                <p className="text-xs font-bold text-purple-400">Longest Streak</p>
-                <h3 className="text-2xl font-bold text-purple-700">24 Days</h3>
+                <p className="text-xs font-bold text-gray-500">Longest Streak</p>
+                <h3 className="text-3xl font-bold text-[#0B1F3A]">24 Days</h3>
               </div>
             </div>
           </div>
           <div className="flex justify-between items-end mt-2">
-            <p className="text-[11px] font-bold text-purple-400">Keep going!</p>
+            <p className="text-[11px] font-bold text-gray-400">Keep going! 🔥</p>
             <div className="h-8 w-20">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={sparklinePurple}>
