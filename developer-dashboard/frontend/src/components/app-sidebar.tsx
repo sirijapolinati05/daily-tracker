@@ -92,11 +92,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 {group.items.map((item) => {
                   const isActive = pathname === item.url || (item.url !== "/" && pathname?.startsWith(item.url))
                   const activeClass = isActive 
-                    ? "bg-gradient-to-r from-[#163D63]/40 to-transparent text-white shadow-[inset_2px_0_0_#D4AF37] border border-[#163D63] rounded-xl"
+                    ? "bg-[#0B1F3A] text-white rounded-xl"
                     : "text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition-colors border border-transparent"
                   
                   const iconClass = isActive
-                    ? "text-black"
+                    ? "text-[#D4AF37]"
                     : "text-gray-400"
                     
                   return (

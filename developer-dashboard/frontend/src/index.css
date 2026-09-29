@@ -150,4 +150,13 @@
   .badge-3d-gray {
     @apply shadow-[inset_1px_1px_2px_white,inset_-1px_-1px_2px_rgba(0,0,0,0.05),2px_2px_4px_rgba(0,0,0,0.05)] bg-gradient-to-br from-gray-50 to-gray-100 border border-white text-gray-600;
   }
+  .badge-3d-blue {
+    @apply shadow-[inset_1px_1px_2px_white,inset_-1px_-1px_2px_rgba(0,0,0,0.05),2px_2px_4px_rgba(59,130,246,0.2)] bg-gradient-to-br from-blue-50 to-blue-100 border border-white text-blue-700;
+  }
+  .badge-3d-purple {
+    @apply shadow-[inset_1px_1px_2px_white,inset_-1px_-1px_2px_rgba(0,0,0,0.05),2px_2px_4px_rgba(168,85,247,0.2)] bg-gradient-to-br from-purple-50 to-purple-100 border border-white text-purple-700;
+  }
+  .badge-3d-yellow {
+    @apply shadow-[inset_1px_1px_2px_white,inset_-1px_-1px_2px_rgba(0,0,0,0.05),2px_2px_4px_rgba(234,179,8,0.2)] bg-gradient-to-br from-yellow-50 to-yellow-100 border border-white text-yellow-700;
+  }
 }

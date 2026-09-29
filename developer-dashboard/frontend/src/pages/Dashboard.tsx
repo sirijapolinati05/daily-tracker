@@ -33,7 +33,7 @@ export default function Dashboard() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0B1F3A] via-[#0B1F3A]/90 to-transparent"></div>
         </div>
         
-        <div className="relative z-10 p-8 md:p-10 flex justify-between items-center h-48">
+        <div className="relative z-10 p-6 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-center min-h-[12rem] h-auto md:h-48 gap-6">
           <div>
             <p className="text-gray-300 font-medium mb-1">Good Evening,</p>
             <h1 className="text-white text-4xl md:text-5xl font-serif font-bold mb-3 tracking-tight">Welcome back! 👋</h1>
@@ -168,7 +168,7 @@ export default function Dashboard() {
                 <Code2 className="h-5 w-5 drop-shadow-sm" />
               </div>
               <div>
-                <h3 className="font-bold text-[#0B1F3A] text-md">Coding Activity</h3>
+                <h3 className="font-bold text-[#0B1F3A] text-md">Coding <span className="text-[#D4AF37]">Activity</span></h3>
                 <p className="text-xs text-gray-500">Your coding progress and activity trend</p>
               </div>
             </div>
@@ -183,16 +183,16 @@ export default function Dashboard() {
               <AreaChart data={activityData} margin={{ top: 10, right: 30, left: -20, bottom: 0 }}>
                 <defs>
                   <linearGradient id="colorActivity" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.2}/>
-                    <stop offset="95%" stopColor="#3b82f6" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="#D4AF37" stopOpacity={0.2}/>
+                    <stop offset="95%" stopColor="#D4AF37" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
                 <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 12 }} dy={10} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 12 }} dx={-10} />
                 <Tooltip />
-                <Area type="monotone" dataKey="solved" stroke="#3b82f6" strokeWidth={3} fillOpacity={1} fill="url(#colorActivity)" 
-                  activeDot={{ r: 6, fill: '#3b82f6', stroke: '#fff', strokeWidth: 2 }} />
+                <Area type="monotone" dataKey="solved" stroke="#D4AF37" strokeWidth={3} fillOpacity={1} fill="url(#colorActivity)" 
+                  activeDot={{ r: 6, fill: '#D4AF37', stroke: '#fff', strokeWidth: 2 }} />
               </AreaChart>
             </ResponsiveContainer>
           </div>

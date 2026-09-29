@@ -1,7 +1,6 @@
 import React from "react"
 import { Code2, Target, BarChart2, Trophy, MoreHorizontal, Search, List, Grid, ChevronRight, CheckCircle2, Clock, Calendar, Eye, Edit2, Trash2 } from "lucide-react"
 import { ResponsiveContainer, AreaChart, Area } from 'recharts'
-import bgImage from '@/assets/background.png'
 
 const sparklineData1 = [{ value: 10 }, { value: 15 }, { value: 8 }, { value: 12 }, { value: 20 }, { value: 18 }, { value: 25 }]
 const sparklineData2 = [{ value: 4 }, { value: 3 }, { value: 5 }, { value: 7 }, { value: 6 }, { value: 8 }, { value: 9 }]
@@ -11,14 +10,8 @@ const sparklineData4 = [{ value: 2 }, { value: 1 }, { value: 3 }, { value: 1 }, 
 export default function LeetCodeTracker() {
   return (
     <div className="w-full relative">
-      
-      {/* Background Image Overlay */}
-      <div className="absolute top-[-24px] right-[-24px] w-1/2 h-[300px] z-0 pointer-events-none overflow-hidden opacity-40">
-         <img src={bgImage} alt="Decorative background" className="w-full h-full object-cover object-right-top" />
-      </div>
-
       {/* Header */}
-      <div className="flex justify-between items-center mb-8 relative z-10">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-8 relative z-10">
         <div>
           <h1 className="text-4xl font-bold text-[#0B1F3A]">LeetCode Tracker</h1>
           <p className="text-gray-500 mt-2">Track your problem solving progress and notes.</p>
@@ -37,9 +30,9 @@ export default function LeetCodeTracker() {
               <Code2 className="h-6 w-6 drop-shadow-sm" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-blue-600">124</h3>
+              <h3 className="text-3xl font-bold text-blue-600">124</h3>
               <p className="text-xs text-gray-500">Total Solved</p>
-              <p className="text-[10px] text-green-500 font-medium mt-1">↑ +12 from last month</p>
+              <p className="text-[10px] text-green-500 font-medium mt-1 whitespace-nowrap">↑ +12 from last month</p>
             </div>
           </div>
           <div className="h-12 w-16">
@@ -64,9 +57,9 @@ export default function LeetCodeTracker() {
               <Target className="h-6 w-6 drop-shadow-sm" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-green-500">68</h3>
+              <h3 className="text-3xl font-bold text-green-500">68</h3>
               <p className="text-xs text-gray-500">Easy</p>
-              <p className="text-[10px] text-green-500 font-medium mt-1">↑ +6 from last month</p>
+              <p className="text-[10px] text-green-500 font-medium mt-1 whitespace-nowrap">↑ +6 from last month</p>
             </div>
           </div>
           <div className="h-12 w-16">
@@ -91,9 +84,9 @@ export default function LeetCodeTracker() {
               <BarChart2 className="h-6 w-6 drop-shadow-sm" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-yellow-600">42</h3>
+              <h3 className="text-3xl font-bold text-yellow-600">42</h3>
               <p className="text-xs text-gray-500">Medium</p>
-              <p className="text-[10px] text-green-500 font-medium mt-1">↑ +4 from last month</p>
+              <p className="text-[10px] text-green-500 font-medium mt-1 whitespace-nowrap">↑ +4 from last month</p>
             </div>
           </div>
           <div className="h-12 w-16">
@@ -118,9 +111,9 @@ export default function LeetCodeTracker() {
               <Trophy className="h-6 w-6 drop-shadow-sm" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-red-500">14</h3>
+              <h3 className="text-3xl font-bold text-red-500">14</h3>
               <p className="text-xs text-gray-500">Hard</p>
-              <p className="text-[10px] text-green-500 font-medium mt-1">↑ +2 from last month</p>
+              <p className="text-[10px] text-green-500 font-medium mt-1 whitespace-nowrap">↑ +2 from last month</p>
             </div>
           </div>
           <div className="h-12 w-16">
