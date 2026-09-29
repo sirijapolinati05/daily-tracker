@@ -83,7 +83,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <Sidebar {...props}>
       <SidebarHeader className="h-20 flex items-center justify-start px-6 pt-6 pb-2">
         <div className="flex items-center gap-3">
-          <div className="bg-gradient-to-br from-[#D4AF37] to-[#E5C76B] p-2 rounded-xl shadow-lg shadow-[#D4AF37]/20">
+          <div className="bg-gradient-to-br from-[#D4AF37] to-[#E5C76B] p-2 rounded-[16px] shadow-lg shadow-[#D4AF37]/20">
             <Code2 className="h-6 w-6 text-[#0B1F3A] stroke-[2.5]" />
           </div>
           <div className="flex flex-col">
@@ -110,8 +110,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     
                   return (
                     <SidebarMenuItem key={item.title}>
-                      <SidebarMenuButton isActive={isActive} className={`h-11 w-full px-3 mb-1 rounded-xl overflow-hidden group ${activeClass}`} render={<Link to={item.url} />}>
-                        <div className={isActive ? "bg-gradient-to-br from-[#D4AF37] to-[#f9df8a] p-1.5 rounded-lg mr-3 shadow-[0_0_12px_rgba(212,175,55,0.4)] transition-all" : "mr-3 p-1.5 rounded-lg bg-gray-800/40 group-hover:bg-gray-800 transition-all"}>
+                      <SidebarMenuButton isActive={isActive} className={`h-11 w-full px-3 mb-1 rounded-[16px] overflow-hidden group ${activeClass}`} render={<Link to={item.url} />}>
+                        <div className={isActive ? "bg-gradient-to-br from-[#D4AF37] to-[#f9df8a] p-1.5 rounded-[16px] mr-3 shadow-[0_0_12px_rgba(212,175,55,0.4)] transition-all" : "mr-3 p-1.5 rounded-[16px] bg-gray-800/40 group-hover:bg-gray-800 transition-all"}>
                           <item.icon className={`h-[18px] w-[18px] ${iconClass}`} />
                         </div>
                         <span className="text-[13.5px] tracking-wide">{item.title}</span>
@@ -125,7 +125,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         ))}
       </SidebarContent>
       <div className="mt-auto p-5">
-        <div className="bg-gradient-to-b from-[#163D63]/50 to-[#0B1F3A] border border-[#2a4a7f]/40 p-4 rounded-2xl flex flex-col items-center text-center relative overflow-hidden">
+        <div className="bg-gradient-to-b from-[#163D63]/50 to-[#0B1F3A] border border-[#2a4a7f]/40 p-4 rounded-[16px] flex flex-col items-center text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-16 h-16 bg-[#D4AF37]/10 blur-xl rounded-full"></div>
           <div className="bg-[#D4AF37]/10 p-2 rounded-full text-[#D4AF37] mb-2 border border-[#D4AF37]/20 shadow-inner">
             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>

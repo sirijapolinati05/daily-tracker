@@ -73,7 +73,7 @@ export default function Notes() {
 
   return (
     <div className="w-full h-full min-h-screen relative pb-8">
-      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-br from-[#FEF3C7]/30 to-[#FDE68A]/10 -z-10 rounded-xl"></div>
+      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-br from-[#FEF3C7]/30 to-[#FDE68A]/10 -z-10 rounded-[16px]"></div>
 
       {/* Header */}
       <div className="flex justify-between items-start mb-8">
@@ -81,16 +81,16 @@ export default function Notes() {
           <h1 className="text-4xl font-bold text-[#0B1F3A]">Notes</h1>
           <p className="text-gray-500 mt-2 font-medium">Capture ideas, technical concepts and important development notes.</p>
         </div>
-        <button className="px-5 py-2.5 bg-[#897127] text-white rounded-lg font-bold text-sm hover:bg-[#6c591e] flex items-center gap-2 shadow-sm">
+        <button className="px-5 py-2.5 bg-[#897127] text-white rounded-[16px] font-bold text-sm hover:bg-[#6c591e] flex items-center gap-2 shadow-sm">
           <Plus className="h-4 w-4" /> Create Note
         </button>
       </div>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-        <div className="bg-gradient-to-br from-blue-50/60 to-white p-5 rounded-[24px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
+        <div className="bg-gradient-to-br from-blue-50/60 to-white p-5 rounded-[16px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-[16px] badge-3d-blue flex items-center justify-center text-blue-600 shrink-0">
+            <div className="h-9 w-9 rounded-full badge-3d-blue flex items-center justify-center text-blue-600 shrink-0">
               <FileText className="h-6 w-6" />
             </div>
             <div>
@@ -110,9 +110,9 @@ export default function Notes() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-yellow-50/60 to-white p-5 rounded-[24px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
+        <div className="bg-gradient-to-br from-yellow-50/60 to-white p-5 rounded-[16px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-[16px] badge-3d-yellow flex items-center justify-center text-yellow-600 shrink-0">
+            <div className="h-9 w-9 rounded-full badge-3d-yellow flex items-center justify-center text-yellow-600 shrink-0">
               <Pin className="h-6 w-6" />
             </div>
             <div>
@@ -132,9 +132,9 @@ export default function Notes() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-green-50/60 to-white p-5 rounded-[24px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
+        <div className="bg-gradient-to-br from-green-50/60 to-white p-5 rounded-[16px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-[16px] badge-3d-green flex items-center justify-center text-green-600 shrink-0">
+            <div className="h-9 w-9 rounded-full badge-3d-green flex items-center justify-center text-green-600 shrink-0">
               <BarChart2 className="h-6 w-6" />
             </div>
             <div>
@@ -154,9 +154,9 @@ export default function Notes() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-purple-50/60 to-white p-5 rounded-[24px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
+        <div className="bg-gradient-to-br from-purple-50/60 to-white p-5 rounded-[16px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-[16px] badge-3d-purple flex items-center justify-center text-purple-600 shrink-0">
+            <div className="h-9 w-9 rounded-full badge-3d-purple flex items-center justify-center text-purple-600 shrink-0">
               <Calendar className="h-6 w-6" />
             </div>
             <div>
@@ -175,21 +175,21 @@ export default function Notes() {
           <input
             type="text"
             placeholder="Search title, content, or tags..."
-            className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm font-medium text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] shadow-sm"
+            className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-[16px] text-sm font-medium text-gray-700 placeholder-gray-400 focus:outline-none focus:border-[#D4AF37] shadow-sm"
           />
         </div>
         <div className="flex items-center gap-2 shrink-0">
-          <button className="h-10 px-3 bg-white border border-gray-200 rounded-xl flex items-center gap-2 text-xs font-bold text-gray-600 hover:bg-gray-50 shadow-sm">
+          <button className="h-10 px-3 bg-white border border-gray-200 rounded-[16px] flex items-center gap-2 text-xs font-bold text-gray-600 hover:bg-gray-50 shadow-sm">
             All Categories <ChevronDown className="h-3.5 w-3.5" />
           </button>
-          <button className="h-10 px-3 bg-white border border-gray-200 rounded-xl flex items-center gap-2 text-xs font-bold text-gray-600 hover:bg-gray-50 shadow-sm">
+          <button className="h-10 px-3 bg-white border border-gray-200 rounded-[16px] flex items-center gap-2 text-xs font-bold text-gray-600 hover:bg-gray-50 shadow-sm">
             Sort by: Latest <ChevronDown className="h-3.5 w-3.5" />
           </button>
-          <div className="flex items-center gap-1 bg-white border border-gray-200 rounded-xl p-1 shadow-sm">
-            <button onClick={() => setGridView(true)} className={`p-2 rounded-lg ${gridView ? 'bg-[#FDE68A] text-[#92400E]' : 'text-gray-400 hover:text-gray-600'}`}>
+          <div className="flex items-center gap-1 bg-white border border-gray-200 rounded-[16px] p-1 shadow-sm">
+            <button onClick={() => setGridView(true)} className={`p-2 rounded-[16px] ${gridView ? 'bg-[#FDE68A] text-[#92400E]' : 'text-gray-400 hover:text-gray-600'}`}>
               <LayoutGrid className="h-4 w-4" />
             </button>
-            <button onClick={() => setGridView(false)} className={`p-2 rounded-lg ${!gridView ? 'bg-[#FDE68A] text-[#92400E]' : 'text-gray-400 hover:text-gray-600'}`}>
+            <button onClick={() => setGridView(false)} className={`p-2 rounded-[16px] ${!gridView ? 'bg-[#FDE68A] text-[#92400E]' : 'text-gray-400 hover:text-gray-600'}`}>
               <List className="h-4 w-4" />
             </button>
           </div>
@@ -216,7 +216,7 @@ export default function Notes() {
       {/* Notes Grid */}
       <div className={`grid gap-5 ${gridView ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
         {notes.map(note => (
-          <div key={note.id} className="bg-white rounded-[24px] shadow-sm border border-gray-100 p-5 flex flex-col gap-3 hover:shadow-md hover:border-gray-200 transition-all group relative">
+          <div key={note.id} className="bg-white rounded-[16px] shadow-sm border border-gray-100 p-5 flex flex-col gap-3 hover:shadow-md hover:border-gray-200 transition-all group relative">
             {/* Top row: tag + pin + actions */}
             <div className="flex items-center justify-between">
               <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${catTagColors[note.tag] ?? 'bg-gray-100 text-gray-600'}`}>
@@ -264,3 +264,5 @@ export default function Notes() {
     </div>
   )
 }
+
+

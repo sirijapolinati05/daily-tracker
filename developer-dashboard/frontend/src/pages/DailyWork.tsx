@@ -1,6 +1,6 @@
-import React from "react"
-import { Target, Plus, CheckCircle2, Clock, CheckCircle, Calendar, ChevronDown, ChevronLeft, ChevronRight, MoreHorizontal, Code2, Monitor, FileText, BookOpen, ListTodo } from "lucide-react"
-import { AreaChart, Area, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from "recharts"
+import React, { useState } from "react"
+import { Target, Plus, CheckCircle2, Clock, CheckCircle, Calendar, ChevronDown, ChevronLeft, ChevronRight, MoreHorizontal, Code2, Monitor, FileText, BookOpen, ListTodo, X } from "lucide-react"
+import { AreaChart, Area, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell, Tooltip } from "recharts"
 
 const sparklineData1 = [{v: 2}, {v: 3}, {v: 2}, {v: 5}, {v: 4}, {v: 6}, {v: 8}]
 const sparklineData2 = [{v: 2}, {v: 4}, {v: 3}, {v: 5}, {v: 5}]
@@ -15,10 +15,12 @@ const progressData = [
 ]
 
 export default function DailyWork() {
+  const [showAddModal, setShowAddModal] = useState(false)
+
   return (
     <div className="w-full h-full min-h-screen relative pb-8">
       {/* Background illustration/gradient area */}
-      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-br from-[#FEF3C7]/30 to-[#FDE68A]/10 -z-10 rounded-xl"></div>
+      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-br from-[#FEF3C7]/30 to-[#FDE68A]/10 -z-10 rounded-[16px]"></div>
       
       <div className="flex justify-between items-start mb-8">
         <div>
@@ -28,10 +30,10 @@ export default function DailyWork() {
           <p className="text-gray-500 mt-2">Plan, track and review everything you work on each day.</p>
         </div>
         <div className="flex gap-3">
-          <button className="px-4 py-2 bg-white border border-gray-200 text-gray-700 rounded-lg font-bold text-sm hover:bg-gray-50 flex items-center gap-2 shadow-sm">
+          <button className="px-4 py-2 bg-white border border-gray-200 text-gray-700 rounded-[16px] font-bold text-sm hover:bg-gray-50 flex items-center gap-2 shadow-sm">
             <Calendar className="h-4 w-4" /> Today
           </button>
-          <button className="px-4 py-2 bg-[#897127] text-white rounded-lg font-bold text-sm hover:bg-[#6c591e] flex items-center gap-2 shadow-sm">
+          <button onClick={() => setShowAddModal(true)} className="px-4 py-2 bg-[#897127] text-white rounded-[16px] font-bold text-sm hover:bg-[#6c591e] flex items-center gap-2 shadow-sm">
             <Plus className="h-4 w-4" /> Add Work
           </button>
         </div>
@@ -40,11 +42,11 @@ export default function DailyWork() {
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
         {/* Today's Tasks */}
-        <div className="bg-gradient-to-br from-blue-50/50 to-white p-5 rounded-[24px] shadow-sm border border-gray-100 flex flex-col justify-between h-32 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-blue-50/50 to-white p-5 rounded-[16px] shadow-sm border border-gray-100 flex flex-col justify-between h-32 relative overflow-hidden">
           <div className="flex justify-between items-start z-10">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-[14px] badge-3d-blue flex items-center justify-center text-blue-600 shadow-sm">
-                <ListTodo className="h-5 w-5" />
+              <div className="h-9 w-9 rounded-full badge-3d-blue flex items-center justify-center text-blue-600 shadow-sm">
+                <ListTodo className="h-4 w-4" />
               </div>
               <div>
                 <h3 className="text-xs font-bold text-gray-500">Today's Tasks</h3>
@@ -65,11 +67,11 @@ export default function DailyWork() {
         </div>
 
         {/* Completed */}
-        <div className="bg-gradient-to-br from-emerald-50/50 to-white p-5 rounded-[24px] shadow-sm border border-gray-100 flex flex-col justify-between h-32 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-emerald-50/50 to-white p-5 rounded-[16px] shadow-sm border border-gray-100 flex flex-col justify-between h-32 relative overflow-hidden">
           <div className="flex justify-between items-start z-10">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-[14px] badge-3d-green flex items-center justify-center text-green-600 shadow-sm">
-                <CheckCircle2 className="h-5 w-5" />
+              <div className="h-9 w-9 rounded-full badge-3d-green flex items-center justify-center text-green-600 shadow-sm">
+                <CheckCircle2 className="h-4 w-4" />
               </div>
               <div>
                 <h3 className="text-xs font-bold text-gray-500">Completed</h3>
@@ -90,11 +92,11 @@ export default function DailyWork() {
         </div>
 
         {/* Productive Hours */}
-        <div className="bg-gradient-to-br from-purple-50/50 to-white p-5 rounded-[24px] shadow-sm border border-gray-100 flex flex-col justify-between h-32 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-purple-50/50 to-white p-5 rounded-[16px] shadow-sm border border-gray-100 flex flex-col justify-between h-32 relative overflow-hidden">
           <div className="flex justify-between items-start z-10">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-[14px] badge-3d-purple flex items-center justify-center text-purple-600 shadow-sm">
-                <Clock className="h-5 w-5" />
+              <div className="h-9 w-9 rounded-full badge-3d-purple flex items-center justify-center text-purple-600 shadow-sm">
+                <Clock className="h-4 w-4" />
               </div>
               <div>
                 <h3 className="text-xs font-bold text-gray-500">Productive Hours</h3>
@@ -115,11 +117,11 @@ export default function DailyWork() {
         </div>
 
         {/* Completion Rate */}
-        <div className="bg-gradient-to-br from-orange-50/50 to-white p-5 rounded-[24px] shadow-sm border border-gray-100 flex flex-col justify-between h-32 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-orange-50/50 to-white p-5 rounded-[16px] shadow-sm border border-gray-100 flex flex-col justify-between h-32 relative overflow-hidden">
           <div className="flex justify-between items-start z-10">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-[14px] badge-3d-orange flex items-center justify-center text-orange-600 shadow-sm">
-                <Target className="h-5 w-5" />
+              <div className="h-9 w-9 rounded-full badge-3d-orange flex items-center justify-center text-orange-600 shadow-sm">
+                <Target className="h-4 w-4" />
               </div>
               <div>
                 <h3 className="text-xs font-bold text-gray-500">Completion Rate</h3>
@@ -175,8 +177,8 @@ export default function DailyWork() {
             <div className="flex items-start gap-4">
               <div className="w-16 shrink-0 text-xs font-bold text-gray-400 pt-3">09:00 AM</div>
               <div className="w-2.5 h-2.5 rounded-full bg-[#D4AF37] mt-4 shrink-0 ring-4 ring-[#fafafa]"></div>
-              <div className="flex-1 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center shrink-0">
+              <div className="flex-1 bg-white border border-gray-100 rounded-[16px] p-5 shadow-sm flex items-start gap-4">
+                <div className="h-9 w-9 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
                   <Code2 className="h-6 w-6 text-blue-500" />
                 </div>
                 <div className="flex-1">
@@ -203,8 +205,8 @@ export default function DailyWork() {
             <div className="flex items-start gap-4">
               <div className="w-16 shrink-0 text-xs font-bold text-gray-400 pt-3">11:00 AM</div>
               <div className="w-2.5 h-2.5 rounded-full bg-[#0B1F3A] mt-4 shrink-0 ring-4 ring-[#fafafa]"></div>
-              <div className="flex-1 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center shrink-0">
+              <div className="flex-1 bg-white border border-gray-100 rounded-[16px] p-5 shadow-sm flex items-start gap-4">
+                <div className="h-9 w-9 rounded-full bg-purple-50 flex items-center justify-center shrink-0">
                   <Monitor className="h-6 w-6 text-purple-500" />
                 </div>
                 <div className="flex-1">
@@ -231,8 +233,8 @@ export default function DailyWork() {
             <div className="flex items-start gap-4">
               <div className="w-16 shrink-0 text-xs font-bold text-gray-400 pt-3">02:30 PM</div>
               <div className="w-2.5 h-2.5 rounded-full bg-[#D4AF37] mt-4 shrink-0 ring-4 ring-[#fafafa]"></div>
-              <div className="flex-1 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-yellow-50 flex items-center justify-center shrink-0">
+              <div className="flex-1 bg-white border border-gray-100 rounded-[16px] p-5 shadow-sm flex items-start gap-4">
+                <div className="h-9 w-9 rounded-full bg-yellow-50 flex items-center justify-center shrink-0">
                   <FileText className="h-6 w-6 text-yellow-600" />
                 </div>
                 <div className="flex-1">
@@ -259,8 +261,8 @@ export default function DailyWork() {
             <div className="flex items-start gap-4">
               <div className="w-16 shrink-0 text-xs font-bold text-gray-400 pt-3">04:00 PM</div>
               <div className="w-2.5 h-2.5 rounded-full bg-[#0B1F3A] mt-4 shrink-0 ring-4 ring-[#fafafa]"></div>
-              <div className="flex-1 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center shrink-0">
+              <div className="flex-1 bg-white border border-gray-100 rounded-[16px] p-5 shadow-sm flex items-start gap-4">
+                <div className="h-9 w-9 rounded-full bg-green-50 flex items-center justify-center shrink-0">
                   <BookOpen className="h-6 w-6 text-green-600" />
                 </div>
                 <div className="flex-1">
@@ -289,71 +291,70 @@ export default function DailyWork() {
         {/* Right Sidebar Widgets */}
         <div className="space-y-6">
           {/* Today's Progress */}
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-            <div className="flex items-center gap-2 mb-6">
-              <ListTodo className="h-5 w-5 text-[#D4AF37]" />
-              <h3 className="font-bold text-[#0B1F3A]">Today's Progress</h3>
+          <div className="bg-gradient-to-br from-slate-50 to-white p-6 rounded-[16px] border border-gray-100 flex flex-col"
+            style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.95)' }}>
+            <div className="flex items-center gap-3 mb-8">
+              <ListTodo className="h-6 w-6 text-[#D4AF37]" />
+              <div>
+                <h3 className="text-lg font-bold text-[#0B1F3A]">Today's Progress</h3>
+                <p className="text-xs text-gray-500 font-medium mt-1">Completion status for today.</p>
+              </div>
             </div>
             
-            <div className="flex items-center justify-between">
-              <div className="w-32 h-32 relative">
-                <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie
-                      data={progressData}
-                      innerRadius={45}
-                      outerRadius={60}
-                      paddingAngle={2}
-                      dataKey="value"
-                      stroke="none"
-                    >
-                      {progressData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
-                      ))}
-                    </Pie>
-                  </PieChart>
-                </ResponsiveContainer>
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="text-2xl font-bold text-[#0B1F3A] leading-none">62%</span>
-                  <span className="text-[10px] font-bold text-gray-400 mt-1">5 of 8 tasks</span>
+            <div className="flex items-center justify-between flex-1">
+              <div className="relative shrink-0 flex items-center justify-center" style={{ width: '140px', height: '140px' }}>
+                <div className="absolute inset-0" style={{ filter: 'drop-shadow(0 6px 18px rgba(0,0,0,0.20)) drop-shadow(0 2px 5px rgba(0,0,0,0.14))' }}>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <PieChart>
+                      <Pie
+                        data={progressData}
+                        innerRadius={42}
+                        outerRadius={60}
+                        paddingAngle={3}
+                        dataKey="value"
+                        stroke="white"
+                        strokeWidth={3}
+                        cornerRadius={6}
+                      >
+                        {progressData.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                      </Pie>
+                      <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+                <div className="absolute flex flex-col items-center justify-center pointer-events-none" style={{
+                  width: '70px', height: '70px', borderRadius: '50%',
+                  background: 'radial-gradient(circle at 40% 35%, #ffffff 0%, #f1f5f9 100%)',
+                  boxShadow: 'inset 0 3px 8px rgba(0,0,0,0.10), inset 0 1px 3px rgba(0,0,0,0.06)',
+                }}>
+                  <span className="text-xl font-bold text-[#0B1F3A] leading-none">62%</span>
+                  <span className="text-[9px] text-gray-400 font-bold uppercase tracking-wide mt-1">5 of 8 tasks</span>
                 </div>
               </div>
 
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center justify-between gap-6">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                    <span className="text-xs font-bold text-[#0B1F3A]">Completed</span>
+              <div className="flex flex-col gap-4 w-full pl-6">
+                {progressData.map(d => (
+                  <div key={d.name} className="flex items-center justify-between w-full">
+                    <div className="flex items-center gap-2">
+                      <span className="h-3 w-3 rounded-full shrink-0" style={{
+                        backgroundColor: d.color,
+                        boxShadow: `0 2px 6px ${d.color}66, inset 0 1px 2px rgba(255,255,255,0.6), inset 0 -1px 2px rgba(0,0,0,0.1)`,
+                      }}></span>
+                      <span className="text-sm font-bold text-[#0B1F3A]">{d.name}</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm font-bold text-[#0B1F3A]">{d.value}</span>
+                    </div>
                   </div>
-                  <span className="text-xs font-bold text-green-500">5</span>
-                </div>
-                <div className="flex items-center justify-between gap-6">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                    <span className="text-xs font-bold text-[#0B1F3A]">In Progress</span>
-                  </div>
-                  <span className="text-xs font-bold text-blue-500">2</span>
-                </div>
-                <div className="flex items-center justify-between gap-6">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-gray-400"></div>
-                    <span className="text-xs font-bold text-[#0B1F3A]">Not Started</span>
-                  </div>
-                  <span className="text-xs font-bold text-[#0B1F3A]">1</span>
-                </div>
-                <div className="flex items-center justify-between gap-6">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-red-500"></div>
-                    <span className="text-xs font-bold text-[#0B1F3A]">Overdue</span>
-                  </div>
-                  <span className="text-xs font-bold text-red-500">0</span>
-                </div>
+                ))}
               </div>
             </div>
           </div>
 
           {/* Categories Breakdown */}
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <div className="bg-white p-6 rounded-[16px] shadow-sm border border-gray-100">
             <div className="flex justify-between items-center mb-6">
               <div className="flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-[#D4AF37]" />
@@ -372,8 +373,8 @@ export default function DailyWork() {
                     <span className="text-[#0B1F3A]">LeetCode</span>
                     <span className="text-gray-400">2/3</span>
                   </div>
-                  <div className="w-full bg-gray-100 rounded-full h-1.5">
-                    <div className="bg-blue-500 h-1.5 rounded-full" style={{ width: '66%' }}></div>
+                  <div className="w-full bg-gray-100 rounded-full h-2 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-gray-200/50 p-[1px]">
+                    <div className="bg-gradient-to-r from-blue-400 to-blue-500 h-full rounded-full shadow-[0_1px_2px_rgba(59,130,246,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-blue-300" style={{ width: '66%' }}></div>
                   </div>
                 </div>
               </div>
@@ -387,8 +388,8 @@ export default function DailyWork() {
                     <span className="text-[#0B1F3A]">Projects</span>
                     <span className="text-gray-400">2/2</span>
                   </div>
-                  <div className="w-full bg-gray-100 rounded-full h-1.5">
-                    <div className="bg-purple-500 h-1.5 rounded-full" style={{ width: '100%' }}></div>
+                  <div className="w-full bg-gray-100 rounded-full h-2 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-gray-200/50 p-[1px]">
+                    <div className="bg-gradient-to-r from-purple-400 to-purple-500 h-full rounded-full shadow-[0_1px_2px_rgba(168,85,247,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-purple-300" style={{ width: '100%' }}></div>
                   </div>
                 </div>
               </div>
@@ -402,8 +403,8 @@ export default function DailyWork() {
                     <span className="text-[#0B1F3A]">Learning</span>
                     <span className="text-gray-400">1/1</span>
                   </div>
-                  <div className="w-full bg-gray-100 rounded-full h-1.5">
-                    <div className="bg-yellow-500 h-1.5 rounded-full" style={{ width: '100%' }}></div>
+                  <div className="w-full bg-gray-100 rounded-full h-2 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-gray-200/50 p-[1px]">
+                    <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 h-full rounded-full shadow-[0_1px_2px_rgba(234,179,8,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-yellow-300" style={{ width: '100%' }}></div>
                   </div>
                 </div>
               </div>
@@ -417,8 +418,8 @@ export default function DailyWork() {
                     <span className="text-[#0B1F3A]">Notes</span>
                     <span className="text-gray-400">0/1</span>
                   </div>
-                  <div className="w-full bg-gray-100 rounded-full h-1.5">
-                    <div className="bg-green-500 h-1.5 rounded-full" style={{ width: '0%' }}></div>
+                  <div className="w-full bg-gray-100 rounded-full h-2 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-gray-200/50 p-[1px]">
+                    <div className="bg-gradient-to-r from-green-400 to-green-500 h-full rounded-full shadow-[0_1px_2px_rgba(34,197,94,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-green-300" style={{ width: '0%' }}></div>
                   </div>
                 </div>
               </div>
@@ -426,7 +427,60 @@ export default function DailyWork() {
           </div>
         </div>
       </div>
+      {/* Add Work Modal */}
+      {showAddModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-[16px] shadow-xl w-full max-w-md p-6 relative">
+            <button onClick={() => setShowAddModal(false)} className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-100">
+              <X className="h-5 w-5" />
+            </button>
+            <h2 className="text-2xl font-bold text-[#0B1F3A] mb-6">Log Daily Work</h2>
+            
+            <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); setShowAddModal(false); }}>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-1.5">Task Name</label>
+                <input type="text" placeholder="e.g. Implement Login API" className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-[16px] text-sm focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]" required />
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-1.5">Category</label>
+                  <select className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-[16px] text-sm focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]">
+                    <option>LeetCode</option>
+                    <option>Projects</option>
+                    <option>Learning</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-1.5">Time Spent (hrs)</label>
+                  <input type="number" step="0.5" placeholder="e.g. 2" className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-[16px] text-sm focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]" required />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-1.5">Status</label>
+                <select className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-[16px] text-sm focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]">
+                  <option>In Progress</option>
+                  <option>Completed</option>
+                  <option>Blocked</option>
+                </select>
+              </div>
+
+              <button type="submit" className="w-full py-3 bg-[#0B1F3A] text-white rounded-[16px] font-bold hover:bg-[#1a365d] transition-colors mt-4">
+                Save Work
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
+
+
+
+
+
+
 

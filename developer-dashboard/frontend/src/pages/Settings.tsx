@@ -30,7 +30,7 @@ export default function Settings() {
 
   return (
     <div className="w-full h-full min-h-screen relative pb-8">
-      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-br from-[#FEF3C7]/30 to-[#FDE68A]/10 -z-10 rounded-xl"></div>
+      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-br from-[#FEF3C7]/30 to-[#FDE68A]/10 -z-10 rounded-[16px]"></div>
 
       {/* Header */}
       <div className="flex justify-between items-start mb-8">
@@ -43,7 +43,7 @@ export default function Settings() {
       <div className="flex flex-col lg:flex-row gap-6">
         {/* Left Nav */}
         <div className="w-full lg:w-64 shrink-0">
-          <div className="bg-white rounded-[24px] shadow-sm border border-gray-100 p-3 flex flex-col gap-1">
+          <div className="bg-white rounded-[16px] shadow-sm border border-gray-100 p-3 flex flex-col gap-1">
             {navItems.map(item => (
               <button
                 key={item.label}
@@ -66,14 +66,14 @@ export default function Settings() {
 
         {/* Center: Profile Form */}
         <div className="flex-1">
-          <div className="bg-white rounded-[24px] shadow-sm border border-gray-100 p-6">
+          <div className="bg-white rounded-[16px] shadow-sm border border-gray-100 p-6">
             {/* Profile Section Header */}
             <div className="flex justify-between items-start mb-6">
               <div>
                 <h2 className="text-xl font-bold text-[#0B1F3A]">Profile Settings</h2>
                 <p className="text-sm text-gray-500 mt-1">Update your personal information and avatar.</p>
               </div>
-              <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-xl text-sm font-bold text-gray-600 hover:bg-gray-50 shadow-sm transition-all">
+              <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-[16px] text-sm font-bold text-gray-600 hover:bg-gray-50 shadow-sm transition-all">
                 <Upload className="h-4 w-4" /> Edit Profile
               </button>
             </div>
@@ -89,7 +89,7 @@ export default function Settings() {
                 </button>
               </div>
               <div>
-                <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-xl text-sm font-bold text-gray-600 hover:bg-gray-50 shadow-sm">
+                <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-[16px] text-sm font-bold text-gray-600 hover:bg-gray-50 shadow-sm">
                   <Upload className="h-4 w-4" /> Change Avatar
                 </button>
                 <p className="text-[11px] text-gray-400 font-medium mt-2">JPG, GIF or PNG. Max size of 2MB.</p>
@@ -105,7 +105,7 @@ export default function Settings() {
                 </label>
                 <input
                   type="text" value={name} onChange={e => setName(e.target.value)}
-                  className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm font-medium text-[#0B1F3A] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 bg-gray-50/50 transition-all"
+                  className="w-full px-4 py-2.5 border border-gray-200 rounded-[16px] text-sm font-medium text-[#0B1F3A] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 bg-gray-50/50 transition-all"
                 />
               </div>
 
@@ -116,7 +116,7 @@ export default function Settings() {
                 </label>
                 <input
                   type="email" value={email} onChange={e => setEmail(e.target.value)}
-                  className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm font-medium text-[#0B1F3A] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 bg-gray-50/50 transition-all"
+                  className="w-full px-4 py-2.5 border border-gray-200 rounded-[16px] text-sm font-medium text-[#0B1F3A] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 bg-gray-50/50 transition-all"
                 />
               </div>
 
@@ -126,12 +126,12 @@ export default function Settings() {
                   <Phone className="h-3.5 w-3.5" /> Phone Number
                 </label>
                 <div className="flex gap-2">
-                  <div className="px-3 py-2.5 border border-gray-200 rounded-xl bg-gray-50/50 flex items-center gap-1.5 shrink-0">
+                  <div className="px-3 py-2.5 border border-gray-200 rounded-[16px] bg-gray-50/50 flex items-center gap-1.5 shrink-0">
                     <span className="text-base">🇮🇳</span>
                   </div>
                   <input
                     type="tel" value={phone} onChange={e => setPhone(e.target.value)}
-                    className="flex-1 px-4 py-2.5 border border-gray-200 rounded-xl text-sm font-medium text-[#0B1F3A] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 bg-gray-50/50 transition-all"
+                    className="flex-1 px-4 py-2.5 border border-gray-200 rounded-[16px] text-sm font-medium text-[#0B1F3A] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 bg-gray-50/50 transition-all"
                   />
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default function Settings() {
                 </label>
                 <input
                   type="text" value={location} onChange={e => setLocation(e.target.value)}
-                  className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm font-medium text-[#0B1F3A] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 bg-gray-50/50 transition-all"
+                  className="w-full px-4 py-2.5 border border-gray-200 rounded-[16px] text-sm font-medium text-[#0B1F3A] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 bg-gray-50/50 transition-all"
                 />
               </div>
             </div>
@@ -159,7 +159,7 @@ export default function Settings() {
                   value={bio}
                   onChange={e => setBio(e.target.value)}
                   maxLength={200}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm font-medium text-[#0B1F3A] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 bg-gray-50/50 transition-all resize-none"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-[16px] text-sm font-medium text-[#0B1F3A] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 bg-gray-50/50 transition-all resize-none"
                 />
                 <span className="absolute bottom-3 right-4 text-[10px] font-bold text-gray-400">{bio.length}/200</span>
               </div>
@@ -167,10 +167,10 @@ export default function Settings() {
 
             {/* Save Row */}
             <div className="flex justify-end gap-3 pt-4 border-t border-gray-100">
-              <button className="px-5 py-2.5 bg-white border border-gray-200 rounded-xl text-sm font-bold text-gray-600 hover:bg-gray-50 shadow-sm transition-all">
+              <button className="px-5 py-2.5 bg-white border border-gray-200 rounded-[16px] text-sm font-bold text-gray-600 hover:bg-gray-50 shadow-sm transition-all">
                 Cancel
               </button>
-              <button className="px-6 py-2.5 bg-[#0B1F3A] hover:bg-[#163D63] text-white rounded-xl text-sm font-bold shadow-md transition-all">
+              <button className="px-6 py-2.5 bg-[#0B1F3A] hover:bg-[#163D63] text-white rounded-[16px] text-sm font-bold shadow-md transition-all">
                 Save Changes
               </button>
             </div>
@@ -179,7 +179,7 @@ export default function Settings() {
 
         {/* Right: Account Stats */}
         <div className="w-full lg:w-56 shrink-0 flex flex-col gap-4">
-          <div className="bg-white rounded-[24px] shadow-sm border border-gray-100 p-5">
+          <div className="bg-white rounded-[16px] shadow-sm border border-gray-100 p-5">
             <h3 className="font-bold text-[#0B1F3A] flex items-center gap-2 text-[13px] mb-4">
               <span className="text-[#D4AF37]">👑</span> Account Stats
             </h3>
@@ -202,3 +202,5 @@ export default function Settings() {
     </div>
   )
 }
+
+

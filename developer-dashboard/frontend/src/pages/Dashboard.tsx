@@ -56,7 +56,7 @@ export default function Dashboard() {
       {/* 4 Stat Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <div className="bg-gradient-to-br from-blue-50/80 to-white p-4 shadow-sm border border-blue-100/50 flex flex-col justify-between" style={{ borderRadius: '16px' }}>
+        <div className="bg-gradient-to-br from-blue-50/80 to-white p-4 shadow-sm border border-blue-100/50 flex flex-col justify-between rounded-[16px]">
           <div className="flex justify-between items-start mb-1">
             <div className="flex items-center gap-3">
               <div className="h-9 w-9 rounded-full bg-gradient-to-br from-[#EBF5FF] to-[#D6E8F9] flex items-center justify-center text-blue-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),3px_3px_8px_rgba(59,130,246,0.2)] border border-white">
@@ -87,7 +87,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-[#F3E8FF]/40 to-white p-4 shadow-sm border border-purple-100/60 flex flex-col justify-between" style={{ borderRadius: '16px' }}>
+        <div className="bg-gradient-to-br from-[#F3E8FF]/40 to-white p-4 shadow-sm border border-purple-100/60 flex flex-col justify-between rounded-[16px]">
           <div className="flex justify-between items-start mb-1">
             <div className="flex items-center gap-3">
               <div className="h-9 w-9 rounded-full bg-gradient-to-br from-[#F3E8FF] to-[#E9D5FF] flex items-center justify-center text-purple-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),3px_3px_8px_rgba(147,51,234,0.2)] border border-white">
@@ -118,7 +118,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-[#DCFCE7]/40 to-white p-4 shadow-sm border border-green-100/60 flex flex-col justify-between" style={{ borderRadius: '16px' }}>
+        <div className="bg-gradient-to-br from-[#DCFCE7]/40 to-white p-4 shadow-sm border border-green-100/60 flex flex-col justify-between rounded-[16px]">
           <div className="flex justify-between items-start mb-1">
             <div className="flex items-center gap-3">
               <div className="h-9 w-9 rounded-full bg-gradient-to-br from-[#DCFCE7] to-[#BBF7D0] flex items-center justify-center text-green-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),3px_3px_8px_rgba(34,197,94,0.2)] border border-white">
@@ -131,13 +131,13 @@ export default function Dashboard() {
           <div className="mt-1">
             <h3 className="text-3xl font-bold text-[#0B1F3A]">3/5</h3>
             <p className="text-[11px] text-gray-500 mt-0.5">60% daily completion</p>
-            <div className="w-full bg-gray-100 rounded-full h-1.5 mt-2">
-              <div className="bg-green-500 h-1.5 rounded-full" style={{ width: '60%' }}></div>
+            <div className="w-full bg-gray-100 rounded-full h-2 mt-2 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-gray-200/50 p-[1px]">
+              <div className="bg-gradient-to-r from-green-400 to-green-500 h-full rounded-full shadow-[0_1px_2px_rgba(34,197,94,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-green-300" style={{ width: '60%' }}></div>
             </div>
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-[#FFEDD5]/40 to-white p-4 shadow-sm border border-orange-100/60 flex flex-col justify-between" style={{ borderRadius: '16px' }}>
+        <div className="bg-gradient-to-br from-[#FFEDD5]/40 to-white p-4 shadow-sm border border-orange-100/60 flex flex-col justify-between rounded-[16px]">
           <div className="flex justify-between items-start mb-1">
             <div className="flex items-center gap-3">
               <div className="h-9 w-9 rounded-full bg-gradient-to-br from-[#FFEDD5] to-[#FED7AA] flex items-center justify-center text-orange-500 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),3px_3px_8px_rgba(249,115,22,0.2)] border border-white">
@@ -150,9 +150,8 @@ export default function Dashboard() {
           <div className="mt-1">
             <h3 className="text-3xl font-bold text-[#0B1F3A]">₹1,245</h3>
             <p className="text-[11px] text-gray-500 mt-0.5">₹255 remaining budget</p>
-            <div className="w-full bg-gray-100 rounded-full h-1.5 mt-2 flex">
-              <div className="bg-orange-400 h-1.5 rounded-l-full" style={{ width: '80%' }}></div>
-              <div className="bg-gray-200 h-1.5 rounded-r-full flex-1"></div>
+            <div className="w-full bg-gray-100 rounded-full h-2 mt-2 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-gray-200/50 p-[1px] flex">
+              <div className="bg-gradient-to-r from-orange-400 to-orange-500 h-full rounded-full shadow-[0_1px_2px_rgba(249,115,22,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-orange-300" style={{ width: '80%' }}></div>
             </div>
           </div>
         </div>
@@ -161,7 +160,7 @@ export default function Dashboard() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Coding Activity Chart */}
-        <div className="bg-gradient-to-br from-[#EBF5FF]/60 to-white p-6 shadow-sm border border-blue-100/50 lg:col-span-2" style={{ borderRadius: '16px' }}>
+        <div className="bg-gradient-to-br from-[#EBF5FF]/60 to-white p-6 shadow-sm border border-blue-100/50 lg:col-span-2 rounded-[16px]">
           <div className="flex justify-between items-start mb-6">
             <div className="flex items-center gap-3">
               <div className="h-11 w-11 rounded-full bg-gradient-to-br from-[#EBF5FF] to-[#D6E8F9] flex items-center justify-center text-blue-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(59,130,246,0.25)] border border-white">
@@ -199,7 +198,7 @@ export default function Dashboard() {
         </div>
 
         {/* Recent LeetCode List */}
-        <div className="bg-gradient-to-br from-[#FFFDF2] to-white p-6 shadow-sm border border-[#E5C76B]/30 flex flex-col" style={{ borderRadius: '16px' }}>
+        <div className="bg-gradient-to-br from-[#FFFDF2] to-white p-6 shadow-sm border border-[#E5C76B]/30 flex flex-col rounded-[16px]">
           <div className="flex justify-between items-center mb-6">
             <div className="flex items-center gap-3">
               <div className="h-11 w-11 rounded-full bg-gradient-to-br from-[#EBF5FF] to-[#D6E8F9] flex items-center justify-center text-blue-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(59,130,246,0.25)] border border-white">
@@ -276,3 +275,5 @@ export default function Dashboard() {
     </div>
   )
 }
+
+

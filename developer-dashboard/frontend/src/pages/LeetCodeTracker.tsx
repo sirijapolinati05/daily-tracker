@@ -1,5 +1,5 @@
-import React from "react"
-import { Code2, Target, BarChart2, Trophy, MoreHorizontal, Search, List, Grid, ChevronRight, CheckCircle2, Clock, Calendar, Eye, Edit2, Trash2 } from "lucide-react"
+import React, { useState } from "react"
+import { Code2, Target, BarChart2, Trophy, MoreHorizontal, Search, List, Grid, ChevronRight, CheckCircle2, Clock, Calendar, Eye, Edit2, Trash2, X } from "lucide-react"
 import { ResponsiveContainer, AreaChart, Area } from 'recharts'
 
 const sparklineData1 = [{ value: 10 }, { value: 15 }, { value: 8 }, { value: 12 }, { value: 20 }, { value: 18 }, { value: 25 }]
@@ -8,6 +8,8 @@ const sparklineData3 = [{ value: 10 }, { value: 5 }, { value: 15 }, { value: 8 }
 const sparklineData4 = [{ value: 2 }, { value: 1 }, { value: 3 }, { value: 1 }, { value: 4 }, { value: 2 }, { value: 5 }]
 
 export default function LeetCodeTracker() {
+  const [showAddModal, setShowAddModal] = useState(false)
+
   return (
     <div className="w-full relative">
       {/* Header */}
@@ -16,7 +18,7 @@ export default function LeetCodeTracker() {
           <h1 className="text-4xl font-bold text-[#0B1F3A]">LeetCode Tracker</h1>
           <p className="text-gray-500 mt-2">Track your problem solving progress and notes.</p>
         </div>
-        <button className="bg-gradient-to-br from-[#D4AF37] to-[#9A7D3C] text-white px-6 py-2.5 rounded-xl font-bold shadow-[inset_2px_2px_4px_rgba(255,255,255,0.4),inset_-2px_-2px_4px_rgba(0,0,0,0.2),4px_4px_10px_rgba(154,125,60,0.4)] border border-[#E5C76B]/50 hover:brightness-110 active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2),inset_-2px_-2px_4px_rgba(255,255,255,0.2)] transition-all flex items-center gap-2">
+        <button onClick={() => setShowAddModal(true)} className="bg-gradient-to-br from-[#D4AF37] to-[#9A7D3C] text-white px-6 py-2.5 rounded-[16px] font-bold shadow-[inset_2px_2px_4px_rgba(255,255,255,0.4),inset_-2px_-2px_4px_rgba(0,0,0,0.2),4px_4px_10px_rgba(154,125,60,0.4)] border border-[#E5C76B]/50 hover:brightness-110 active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2),inset_-2px_-2px_4px_rgba(255,255,255,0.2)] transition-all flex items-center gap-2">
           <span className="text-lg leading-none mt-[-2px]">+</span> Add Problem
         </button>
       </div>
@@ -26,8 +28,8 @@ export default function LeetCodeTracker() {
         {/* Total Solved */}
         <div className="bg-gradient-to-br from-[#EBF5FF]/60 to-white p-5 shadow-sm border border-blue-100/50 flex items-center justify-between" style={{ borderRadius: '16px' }}>
           <div className="flex gap-4 items-center">
-            <div className="h-12 w-12 shrink-0 rounded-full bg-gradient-to-br from-[#EBF5FF] to-[#D6E8F9] flex items-center justify-center text-blue-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(59,130,246,0.25)] border border-white">
-              <Code2 className="h-6 w-6 drop-shadow-sm" />
+            <div className="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-[#EBF5FF] to-[#D6E8F9] flex items-center justify-center text-blue-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(59,130,246,0.25)] border border-white">
+              <Code2 className="h-4 w-4 drop-shadow-sm" />
             </div>
             <div>
               <h3 className="text-3xl font-bold text-[#0B1F3A]">124</h3>
@@ -53,8 +55,8 @@ export default function LeetCodeTracker() {
         {/* Easy */}
         <div className="bg-gradient-to-br from-[#DCFCE7]/60 to-white p-5 shadow-sm border border-green-100/50 flex items-center justify-between" style={{ borderRadius: '16px' }}>
           <div className="flex gap-4 items-center">
-            <div className="h-12 w-12 shrink-0 rounded-full bg-gradient-to-br from-[#DCFCE7] to-[#BBF7D0] flex items-center justify-center text-green-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(34,197,94,0.25)] border border-white">
-              <Target className="h-6 w-6 drop-shadow-sm" />
+            <div className="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-[#DCFCE7] to-[#BBF7D0] flex items-center justify-center text-green-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(34,197,94,0.25)] border border-white">
+              <Target className="h-4 w-4 drop-shadow-sm" />
             </div>
             <div>
               <h3 className="text-3xl font-bold text-[#0B1F3A]">68</h3>
@@ -80,8 +82,8 @@ export default function LeetCodeTracker() {
         {/* Medium */}
         <div className="bg-gradient-to-br from-[#FEF3C7]/60 to-white p-5 shadow-sm border border-yellow-100/50 flex items-center justify-between" style={{ borderRadius: '16px' }}>
           <div className="flex gap-4 items-center">
-            <div className="h-12 w-12 shrink-0 rounded-full bg-gradient-to-br from-[#FEF3C7] to-[#FDE68A] flex items-center justify-center text-yellow-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(234,179,8,0.25)] border border-white">
-              <BarChart2 className="h-6 w-6 drop-shadow-sm" />
+            <div className="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-[#FEF3C7] to-[#FDE68A] flex items-center justify-center text-yellow-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(234,179,8,0.25)] border border-white">
+              <BarChart2 className="h-4 w-4 drop-shadow-sm" />
             </div>
             <div>
               <h3 className="text-3xl font-bold text-[#0B1F3A]">42</h3>
@@ -107,8 +109,8 @@ export default function LeetCodeTracker() {
         {/* Hard */}
         <div className="bg-gradient-to-br from-[#FEE2E2]/60 to-white p-5 shadow-sm border border-red-100/50 flex items-center justify-between" style={{ borderRadius: '16px' }}>
           <div className="flex gap-4 items-center">
-            <div className="h-12 w-12 shrink-0 rounded-full bg-gradient-to-br from-[#FEE2E2] to-[#FECACA] flex items-center justify-center text-red-500 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(239,68,68,0.25)] border border-white">
-              <Trophy className="h-6 w-6 drop-shadow-sm" />
+            <div className="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-[#FEE2E2] to-[#FECACA] flex items-center justify-center text-red-500 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(239,68,68,0.25)] border border-white">
+              <Trophy className="h-4 w-4 drop-shadow-sm" />
             </div>
             <div>
               <h3 className="text-3xl font-bold text-[#0B1F3A]">14</h3>
@@ -161,7 +163,7 @@ export default function LeetCodeTracker() {
       </div>
 
       {/* Table */}
-      <div className="bg-gradient-to-br from-slate-50 to-white rounded-[24px] shadow-sm border border-gray-100 overflow-x-auto mb-6 relative z-10">
+      <div className="bg-gradient-to-br from-slate-50 to-white rounded-[16px] shadow-sm border border-gray-100 overflow-x-auto mb-6 relative z-10">
         <table className="w-full text-left text-sm whitespace-nowrap">
           <thead className="border-b border-gray-100 text-slate-600 bg-slate-50/50 font-medium">
             <tr>
@@ -296,7 +298,7 @@ export default function LeetCodeTracker() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 relative z-10">
         {/* Difficulty Progress */}
-        <div className="bg-gradient-to-br from-[#F3E8FF]/40 to-white p-6 shadow-sm border border-purple-100/50 rounded-[24px]">
+        <div className="bg-gradient-to-br from-[#F3E8FF]/40 to-white p-6 shadow-sm border border-purple-100/50 rounded-[16px]">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
               <BarChart2 className="h-5 w-5 text-[#D4AF37]" />
@@ -308,24 +310,24 @@ export default function LeetCodeTracker() {
           <div className="space-y-5">
             <div className="flex items-center gap-4">
               <span className="w-14 text-sm font-bold text-green-500">Easy</span>
-              <div className="flex-1 bg-gray-100 rounded-full h-2">
-                <div className="bg-[#10b981] h-2 rounded-full" style={{width: '55%'}}></div>
+              <div className="flex-1 bg-gray-100 rounded-full h-2 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-gray-200/50 p-[1px]">
+                <div className="bg-gradient-to-r from-green-400 to-green-500 h-full rounded-full shadow-[0_1px_2px_rgba(34,197,94,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-green-300" style={{width: '55%'}}></div>
               </div>
               <span className="text-xs font-bold text-green-600">68 / <span className="text-gray-400 font-medium">124</span></span>
               <span className="text-xs text-green-500 font-bold w-8 text-right">55%</span>
             </div>
             <div className="flex items-center gap-4">
               <span className="w-14 text-sm font-bold text-yellow-500">Medium</span>
-              <div className="flex-1 bg-gray-100 rounded-full h-2">
-                <div className="bg-[#f59e0b] h-2 rounded-full" style={{width: '34%'}}></div>
+              <div className="flex-1 bg-gray-100 rounded-full h-2 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-gray-200/50 p-[1px]">
+                <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 h-full rounded-full shadow-[0_1px_2px_rgba(234,179,8,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-yellow-300" style={{width: '34%'}}></div>
               </div>
               <span className="text-xs font-bold text-yellow-600">42 / <span className="text-gray-400 font-medium">124</span></span>
               <span className="text-xs text-yellow-500 font-bold w-8 text-right">34%</span>
             </div>
             <div className="flex items-center gap-4">
               <span className="w-14 text-sm font-bold text-red-500">Hard</span>
-              <div className="flex-1 bg-gray-100 rounded-full h-2">
-                <div className="bg-[#ef4444] h-2 rounded-full" style={{width: '11%'}}></div>
+              <div className="flex-1 bg-gray-100 rounded-full h-2 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-gray-200/50 p-[1px]">
+                <div className="bg-gradient-to-r from-red-400 to-red-500 h-full rounded-full shadow-[0_1px_2px_rgba(239,68,68,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-red-300" style={{width: '11%'}}></div>
               </div>
               <span className="text-xs font-bold text-red-500">14 / <span className="text-gray-400 font-medium">124</span></span>
               <span className="text-xs text-red-500 font-bold w-8 text-right">11%</span>
@@ -334,7 +336,7 @@ export default function LeetCodeTracker() {
         </div>
 
         {/* Recently Practiced */}
-        <div className="bg-gradient-to-br from-[#EBF5FF]/40 to-white p-6 shadow-sm border border-blue-100/50 rounded-[24px]">
+        <div className="bg-gradient-to-br from-[#EBF5FF]/40 to-white p-6 shadow-sm border border-blue-100/50 rounded-[16px]">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
               <Clock className="h-5 w-5 text-[#D4AF37]" />
@@ -395,6 +397,55 @@ export default function LeetCodeTracker() {
         </div>
       </div>
 
+      {/* Add Problem Modal */}
+      {showAddModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-[16px] shadow-xl w-full max-w-md p-6 relative">
+            <button onClick={() => setShowAddModal(false)} className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-100">
+              <X className="h-5 w-5" />
+            </button>
+            <h2 className="text-2xl font-bold text-[#0B1F3A] mb-6">Add Problem</h2>
+            
+            <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); setShowAddModal(false); }}>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-1.5">Problem Title</label>
+                <input type="text" placeholder="e.g. Two Sum" className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-[16px] text-sm focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]" required />
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-1.5">Difficulty</label>
+                  <select className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-[16px] text-sm focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]">
+                    <option>Easy</option>
+                    <option>Medium</option>
+                    <option>Hard</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-1.5">Status</label>
+                  <select className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-[16px] text-sm focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]">
+                    <option>Solved</option>
+                    <option>Attempted</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-1.5">Topic Tags (comma separated)</label>
+                <input type="text" placeholder="e.g. Array, Hash Table" className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-[16px] text-sm focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]" required />
+              </div>
+
+              <button type="submit" className="w-full py-3 bg-[#0B1F3A] text-white rounded-[16px] font-bold hover:bg-[#1a365d] transition-colors mt-4">
+                Save Problem
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
+
+
+
+

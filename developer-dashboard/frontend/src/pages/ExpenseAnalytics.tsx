@@ -27,7 +27,7 @@ const categoryData = [
 const CustomTooltip = ({ active, payload, label }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-white border border-gray-100 shadow-lg rounded-xl px-4 py-3">
+      <div className="bg-white border border-gray-100 shadow-lg rounded-[16px] px-4 py-3">
         <p className="text-[11px] font-bold text-gray-400 mb-1">{label}</p>
         <p className="text-[15px] font-extrabold text-[#0B1F3A]">₹{payload[0].value.toLocaleString()}</p>
       </div>
@@ -39,7 +39,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 export default function ExpenseAnalytics() {
   return (
     <div className="w-full h-full min-h-screen relative pb-8">
-      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-br from-[#FEF3C7]/30 to-[#FDE68A]/10 -z-10 rounded-xl"></div>
+      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-br from-[#FEF3C7]/30 to-[#FDE68A]/10 -z-10 rounded-[16px]"></div>
 
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
@@ -50,7 +50,7 @@ export default function ExpenseAnalytics() {
           </h1>
           <p className="text-gray-500 mt-2 font-medium">Understand your spending patterns and manage your budget.</p>
         </div>
-        <button className="flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm font-bold text-[#0B1F3A] shadow-sm hover:bg-gray-50 whitespace-nowrap">
+        <button className="flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-200 rounded-[16px] text-sm font-bold text-[#0B1F3A] shadow-sm hover:bg-gray-50 whitespace-nowrap">
           <Calendar className="h-4 w-4 text-gray-400" />
           Sep 01, 2026 – Sep 30, 2026
           <ChevronDown className="h-4 w-4 text-gray-400" />
@@ -60,9 +60,9 @@ export default function ExpenseAnalytics() {
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
         {/* Total Spending */}
-        <div className="bg-gradient-to-br from-blue-50/60 to-white p-5 rounded-[24px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
+        <div className="bg-gradient-to-br from-blue-50/60 to-white p-5 rounded-[16px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-[16px] badge-3d-blue flex items-center justify-center text-blue-600 shrink-0">
+            <div className="h-9 w-9 rounded-full badge-3d-blue flex items-center justify-center text-blue-600 shrink-0">
               <Wallet className="h-6 w-6" />
             </div>
             <div>
@@ -83,9 +83,9 @@ export default function ExpenseAnalytics() {
         </div>
 
         {/* Monthly Budget */}
-        <div className="bg-gradient-to-br from-emerald-50/60 to-white p-5 rounded-[24px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
+        <div className="bg-gradient-to-br from-emerald-50/60 to-white p-5 rounded-[16px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-[16px] badge-3d-green flex items-center justify-center text-green-600 shrink-0">
+            <div className="h-9 w-9 rounded-full badge-3d-green flex items-center justify-center text-green-600 shrink-0">
               <Target className="h-6 w-6" />
             </div>
             <div>
@@ -94,17 +94,17 @@ export default function ExpenseAnalytics() {
             </div>
           </div>
           <div className="flex flex-col gap-1">
-            <div className="w-full bg-green-100 rounded-full h-1.5">
-              <div className="bg-green-500 h-1.5 rounded-full" style={{ width: '42%' }}></div>
+            <div className="w-full bg-gray-100 rounded-full h-2 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-gray-200/50 p-[1px]">
+              <div className="bg-gradient-to-r from-green-400 to-green-500 h-full rounded-full shadow-[0_1px_2px_rgba(34,197,94,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-green-300" style={{ width: '42%' }}></div>
             </div>
             <p className="text-[10px] font-bold text-green-600">42% used</p>
           </div>
         </div>
 
         {/* Remaining */}
-        <div className="bg-gradient-to-br from-yellow-50/60 to-white p-5 rounded-[24px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
+        <div className="bg-gradient-to-br from-yellow-50/60 to-white p-5 rounded-[16px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-[16px] badge-3d-yellow flex items-center justify-center text-yellow-600 shrink-0">
+            <div className="h-9 w-9 rounded-full badge-3d-yellow flex items-center justify-center text-yellow-600 shrink-0">
               <PieChartIcon className="h-6 w-6" />
             </div>
             <div>
@@ -113,17 +113,17 @@ export default function ExpenseAnalytics() {
             </div>
           </div>
           <div className="flex flex-col gap-1">
-            <div className="w-full bg-green-100 rounded-full h-1.5">
-              <div className="bg-green-500 h-1.5 rounded-full" style={{ width: '58%' }}></div>
+            <div className="w-full bg-gray-100 rounded-full h-2 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-gray-200/50 p-[1px]">
+              <div className="bg-gradient-to-r from-green-400 to-green-500 h-full rounded-full shadow-[0_1px_2px_rgba(34,197,94,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-green-300" style={{ width: '58%' }}></div>
             </div>
             <p className="text-[10px] font-bold text-green-600">58% left</p>
           </div>
         </div>
 
         {/* Average Daily */}
-        <div className="bg-gradient-to-br from-purple-50/60 to-white p-5 rounded-[24px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
+        <div className="bg-gradient-to-br from-purple-50/60 to-white p-5 rounded-[16px] shadow-sm border border-gray-100 flex flex-col justify-between h-32">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-[16px] badge-3d-purple flex items-center justify-center text-purple-600 shrink-0">
+            <div className="h-9 w-9 rounded-full badge-3d-purple flex items-center justify-center text-purple-600 shrink-0">
               <BarChart2 className="h-6 w-6" />
             </div>
             <div>
@@ -151,10 +151,10 @@ export default function ExpenseAnalytics() {
         <button className="px-5 py-2 bg-white border border-gray-200 text-gray-500 rounded-full font-bold text-sm hover:bg-gray-50 shadow-sm">Category Analysis</button>
         <button className="px-5 py-2 bg-white border border-gray-200 text-gray-500 rounded-full font-bold text-sm hover:bg-gray-50 shadow-sm">Payment Methods</button>
         <div className="ml-auto flex items-center gap-3">
-          <button className="flex items-center gap-2 px-3 py-2 bg-white border border-gray-200 rounded-lg text-xs font-bold text-gray-600 shadow-sm hover:bg-gray-50">
+          <button className="flex items-center gap-2 px-3 py-2 bg-white border border-gray-200 rounded-[16px] text-xs font-bold text-gray-600 shadow-sm hover:bg-gray-50">
             Daily <ChevronDown className="h-3.5 w-3.5" />
           </button>
-          <button className="flex items-center gap-2 px-3 py-2 bg-white border border-gray-200 rounded-lg text-xs font-bold text-gray-600 shadow-sm hover:bg-gray-50">
+          <button className="flex items-center gap-2 px-3 py-2 bg-white border border-gray-200 rounded-[16px] text-xs font-bold text-gray-600 shadow-sm hover:bg-gray-50">
             All Categories <ChevronDown className="h-3.5 w-3.5" />
           </button>
         </div>
@@ -163,7 +163,7 @@ export default function ExpenseAnalytics() {
       {/* Charts Row */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Spending Trend - Area Chart */}
-        <div className="lg:col-span-2 bg-white rounded-[24px] shadow-sm border border-gray-100 p-6 flex flex-col">
+        <div className="lg:col-span-2 bg-white rounded-[16px] shadow-sm border border-gray-100 p-6 flex flex-col">
           <div className="flex justify-between items-center mb-6">
             <h3 className="font-bold text-[#0B1F3A] flex items-center gap-2 text-[15px]">
               <Calendar className="h-4 w-4 text-yellow-500" /> Spending Trend
@@ -197,53 +197,86 @@ export default function ExpenseAnalytics() {
         </div>
 
         {/* Category Distribution */}
-        <div className="bg-white rounded-[24px] shadow-sm border border-gray-100 p-6 flex flex-col">
-          <div className="flex justify-between items-center mb-4">
-            <h3 className="font-bold text-[#0B1F3A] flex items-center gap-2 text-[15px]">
-              <PieChartIcon className="h-4 w-4 text-yellow-500" /> Category Distribution
-            </h3>
-            <div className="flex items-center gap-1 bg-gray-50 border border-gray-200 rounded-lg p-1">
+        <div className="bg-gradient-to-br from-slate-50 to-white rounded-[16px] border border-gray-100 p-6 flex flex-col"
+          style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.95)' }}>
+          <div className="flex justify-between items-center mb-6">
+            <div className="flex items-center gap-3">
+              <PieChartIcon className="h-6 w-6 text-[#D4AF37]" />
+              <div>
+                <h3 className="text-lg font-bold text-[#0B1F3A]">Category Distribution</h3>
+                <p className="text-xs text-gray-500 font-medium mt-1">Breakdown of expenses.</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-1 bg-white shadow-sm border border-gray-200 rounded-[16px] p-1">
               <button className="px-2.5 py-1 bg-[#FDE68A] rounded-md text-[#92400E] text-[10px] font-bold">Amount</button>
               <button className="px-2.5 py-1 text-gray-400 text-[10px] font-bold hover:text-gray-600">Percentage</button>
             </div>
           </div>
 
-          {/* Donut */}
-          <div className="flex items-center justify-center relative my-2">
-            <div className="w-44 h-44 relative shrink-0">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie data={categoryData} innerRadius={52} outerRadius={78} paddingAngle={3} dataKey="value" stroke="none">
-                    {categoryData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                </PieChart>
-              </ResponsiveContainer>
-              <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-xl font-extrabold text-[#0B1F3A] leading-none">₹8,450</span>
-                <span className="text-[10px] font-bold text-gray-400 mt-1">Total Spent</span>
+          <div className="flex flex-col flex-1">
+            <div className="flex items-center justify-center relative flex-1 min-h-[160px]">
+              <div className="relative shrink-0 flex items-center justify-center" style={{ width: '160px', height: '160px' }}>
+                <div className="absolute inset-0" style={{ filter: 'drop-shadow(0 6px 18px rgba(0,0,0,0.20)) drop-shadow(0 2px 5px rgba(0,0,0,0.14))' }}>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <PieChart>
+                      <Pie
+                        data={categoryData}
+                        innerRadius={50}
+                        outerRadius={75}
+                        paddingAngle={3}
+                        dataKey="value"
+                        stroke="white"
+                        strokeWidth={3}
+                        cornerRadius={6}
+                      >
+                        {categoryData.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                      </Pie>
+                      <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+                    </PieChart>
+                  </ResponsiveContainer>
+                </div>
+                <div className="absolute flex flex-col items-center justify-center pointer-events-none" style={{
+                  width: '84px', height: '84px', borderRadius: '50%',
+                  background: 'radial-gradient(circle at 40% 35%, #ffffff 0%, #f1f5f9 100%)',
+                  boxShadow: 'inset 0 3px 8px rgba(0,0,0,0.10), inset 0 1px 3px rgba(0,0,0,0.06)',
+                }}>
+                  <span className="text-xl font-bold text-[#0B1F3A] leading-none">₹8,450</span>
+                  <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wide mt-1">Total Spent</span>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Legend */}
-          <div className="flex flex-col gap-2.5 mt-3">
-            {categoryData.map(cat => (
-              <div key={cat.name} className="flex items-center justify-between text-xs">
-                <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: cat.color }}></div>
-                  <span className="font-bold text-gray-600">{cat.name}</span>
+            <div className="flex flex-col gap-4 mt-6">
+              {categoryData.map(d => (
+                <div key={d.name} className="flex items-center justify-between w-full">
+                  <div className="flex items-center gap-2">
+                    <span className="h-3 w-3 rounded-full shrink-0" style={{
+                      backgroundColor: d.color,
+                      boxShadow: `0 2px 6px ${d.color}66, inset 0 1px 2px rgba(255,255,255,0.6), inset 0 -1px 2px rgba(0,0,0,0.1)`,
+                    }}></span>
+                    <span className="text-sm font-bold text-[#0B1F3A]">{d.name}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="text-sm font-bold text-[#0B1F3A]">₹{d.value.toLocaleString()}</span>
+                    <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full text-center"
+                      style={{
+                        backgroundColor: `${d.color}15`,
+                        color: d.color,
+                        border: `1px solid ${d.color}40`,
+                        boxShadow: `0 2px 6px ${d.color}20, inset 0 1px 0 rgba(255,255,255,0.8)`,
+                        minWidth: '44px',
+                      }}>{d.percent}</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <span className="font-extrabold text-[#0B1F3A]">₹{cat.value.toLocaleString()}</span>
-                  <span className="font-bold text-gray-400 w-8 text-right">{cat.percent}</span>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </div>
   )
 }
+
+

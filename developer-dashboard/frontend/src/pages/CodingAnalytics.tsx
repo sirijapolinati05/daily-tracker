@@ -54,11 +54,11 @@ export default function CodingAnalytics() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 relative z-10">
         
         {/* Total Solved */}
-        <div className="bg-gradient-to-br from-blue-50/50 to-white p-4 shadow-sm border border-blue-100/50 flex flex-col justify-between rounded-[24px]">
+        <div className="bg-gradient-to-br from-blue-50/50 to-white p-4 shadow-sm border border-blue-100/50 flex flex-col justify-between rounded-[16px]">
           <div className="flex justify-between items-start w-full">
             <div className="flex items-center gap-3">
-              <div className="h-12 w-12 shrink-0 rounded-full bg-gradient-to-br from-[#EBF5FF] to-[#D6E8F9] flex items-center justify-center text-blue-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(59,130,246,0.25)] border border-white">
-                <Code2 className="h-6 w-6 drop-shadow-sm" />
+              <div className="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-[#EBF5FF] to-[#D6E8F9] flex items-center justify-center text-blue-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(59,130,246,0.25)] border border-white">
+                <Code2 className="h-4 w-4 drop-shadow-sm" />
               </div>
               <div>
                 <p className="text-sm font-bold text-[#0B1F3A]">Total Solved</p>
@@ -79,11 +79,11 @@ export default function CodingAnalytics() {
         </div>
 
         {/* Current Streak */}
-        <div className="bg-gradient-to-br from-green-50/50 to-white p-4 shadow-sm border border-green-100/50 flex flex-col justify-between rounded-[24px]">
+        <div className="bg-gradient-to-br from-green-50/50 to-white p-4 shadow-sm border border-green-100/50 flex flex-col justify-between rounded-[16px]">
           <div className="flex justify-between items-start w-full">
             <div className="flex items-center gap-3">
-              <div className="h-12 w-12 shrink-0 rounded-full bg-gradient-to-br from-[#DCFCE7] to-[#BBF7D0] flex items-center justify-center text-green-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(34,197,94,0.25)] border border-white">
-                <Flame className="h-6 w-6 drop-shadow-sm" />
+              <div className="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-[#DCFCE7] to-[#BBF7D0] flex items-center justify-center text-green-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(34,197,94,0.25)] border border-white">
+                <Flame className="h-4 w-4 drop-shadow-sm" />
               </div>
               <div>
                 <p className="text-sm font-bold text-[#0B1F3A]">Current Streak</p>
@@ -104,11 +104,11 @@ export default function CodingAnalytics() {
         </div>
 
         {/* Longest Streak */}
-        <div className="bg-gradient-to-br from-purple-50/50 to-white p-4 shadow-sm border border-purple-100/50 flex flex-col justify-between rounded-[24px]">
+        <div className="bg-gradient-to-br from-purple-50/50 to-white p-4 shadow-sm border border-purple-100/50 flex flex-col justify-between rounded-[16px]">
           <div className="flex justify-between items-start w-full relative">
             <div className="flex items-center gap-3">
-              <div className="h-12 w-12 shrink-0 rounded-full bg-gradient-to-br from-[#F3E8FF] to-[#E9D5FF] flex items-center justify-center text-purple-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(168,85,247,0.25)] border border-white">
-                <Target className="h-6 w-6 drop-shadow-sm" />
+              <div className="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-[#F3E8FF] to-[#E9D5FF] flex items-center justify-center text-purple-600 shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(168,85,247,0.25)] border border-white">
+                <Target className="h-4 w-4 drop-shadow-sm" />
               </div>
               <div>
                 <p className="text-sm font-bold text-[#0B1F3A]">Longest Streak</p>
@@ -132,11 +132,11 @@ export default function CodingAnalytics() {
         </div>
 
         {/* This Month */}
-        <div className="bg-gradient-to-br from-yellow-50/50 to-white p-4 shadow-sm border border-yellow-100/50 flex flex-col justify-between rounded-[24px]">
+        <div className="bg-gradient-to-br from-yellow-50/50 to-white p-4 shadow-sm border border-yellow-100/50 flex flex-col justify-between rounded-[16px]">
           <div className="flex justify-between items-start w-full">
             <div className="flex items-center gap-3">
-              <div className="h-12 w-12 shrink-0 rounded-full bg-gradient-to-br from-[#FEF3C7] to-[#FDE68A] flex items-center justify-center text-[#D4AF37] shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(212,175,55,0.25)] border border-white">
-                <Calendar className="h-6 w-6 drop-shadow-sm" />
+              <div className="h-9 w-9 shrink-0 rounded-full bg-gradient-to-br from-[#FEF3C7] to-[#FDE68A] flex items-center justify-center text-[#D4AF37] shadow-[inset_2px_2px_4px_white,inset_-2px_-2px_4px_rgba(0,0,0,0.08),4px_4px_10px_rgba(212,175,55,0.25)] border border-white">
+                <Calendar className="h-4 w-4 drop-shadow-sm" />
               </div>
               <div>
                 <p className="text-sm font-bold text-[#0B1F3A]">This Month</p>
@@ -160,7 +160,8 @@ export default function CodingAnalytics() {
       {/* Middle Row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6 relative z-10">
         {/* Problems Solved Per Week (Bar Chart) */}
-        <div className="bg-white p-6 rounded-[24px] shadow-sm border border-gray-100 flex flex-col">
+        <div className="bg-gradient-to-br from-slate-50 to-white p-6 rounded-[16px] border border-gray-100 flex flex-col"
+          style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.95)' }}>
           <div className="flex justify-between items-center mb-6">
             <div className="flex items-center gap-3">
               <BarChart2 className="h-6 w-6 text-[#D4AF37]" />
@@ -174,29 +175,35 @@ export default function CodingAnalytics() {
             </button>
           </div>
           
-          <div className="flex-1 w-full h-52">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={weeklyData} margin={{ top: 20, right: 10, left: -20, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 11, fontWeight: 'bold' }} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 11, fontWeight: 'bold' }} />
-                <Tooltip cursor={{ fill: '#F8FAFC' }} contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
-                <Bar dataKey="problems" fill="url(#goldGradient)" radius={[6, 6, 0, 0]} barSize={36}>
-                  <LabelList dataKey="problems" position="top" fill="#0B1F3A" fontWeight="bold" fontSize={11} offset={8} />
-                </Bar>
-                <defs>
-                  <linearGradient id="goldGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#E5C76B" />
-                    <stop offset="100%" stopColor="#FDE68A" stopOpacity={0.4} />
-                  </linearGradient>
-                </defs>
-              </BarChart>
-            </ResponsiveContainer>
+          <div className="flex-1 w-full h-52 relative">
+            <div className="absolute inset-0" style={{ filter: 'drop-shadow(0 6px 12px rgba(229,199,107,0.35)) drop-shadow(0 3px 6px rgba(0,0,0,0.15))' }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={weeklyData} margin={{ top: 20, right: 10, left: -20, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                  <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 11, fontWeight: 'bold' }} dy={10} />
+                  <YAxis axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 11, fontWeight: 'bold' }} />
+                  <Tooltip cursor={false} contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+                  <Bar dataKey="problems" fill="url(#goldCylinder)" radius={[8, 8, 0, 0]} barSize={36}>
+                    <LabelList dataKey="problems" position="top" fill="#0B1F3A" fontWeight="bold" fontSize={11} offset={8} />
+                  </Bar>
+                  <defs>
+                    <linearGradient id="goldCylinder" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stopColor="#B48608" />
+                      <stop offset="25%" stopColor="#F5D061" />
+                      <stop offset="50%" stopColor="#FFF1B8" />
+                      <stop offset="75%" stopColor="#F5D061" />
+                      <stop offset="100%" stopColor="#9C7306" />
+                    </linearGradient>
+                  </defs>
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
           </div>
         </div>
 
         {/* Difficulty Distribution (Donut) */}
-        <div className="bg-gradient-to-br from-slate-50 to-white p-6 rounded-[24px] shadow-sm border border-gray-100 flex flex-col">
+        <div className="bg-gradient-to-br from-slate-50 to-white p-6 rounded-[16px] border border-gray-100 flex flex-col"
+          style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.95)' }}>
           <div className="flex items-center gap-3 mb-8">
             <PieChartIcon className="h-6 w-6 text-[#D4AF37]" />
             <div>
@@ -206,41 +213,61 @@ export default function CodingAnalytics() {
           </div>
           
           <div className="flex items-center justify-between flex-1">
-            <div className="h-32 w-32 relative shrink-0">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie
-                    data={difficultyData}
-                    innerRadius={45}
-                    outerRadius={60}
-                    paddingAngle={4}
-                    dataKey="value"
-                    stroke="none"
-                    cornerRadius={4}
-                  >
-                    {difficultyData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
-                </PieChart>
-              </ResponsiveContainer>
-              <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-2xl font-bold text-[#0B1F3A]">127</span>
-                <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Solved</span>
+            {/* 3D Bulged Donut Chart — no platform bg, only chart */}
+            <div className="relative shrink-0 flex items-center justify-center" style={{ width: '140px', height: '140px' }}>
+              {/* Chart with drop-shadow for 3D bulged slices */}
+              <div className="absolute inset-0" style={{ filter: 'drop-shadow(0 6px 18px rgba(0,0,0,0.20)) drop-shadow(0 2px 5px rgba(0,0,0,0.14))' }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={difficultyData}
+                      innerRadius={42}
+                      outerRadius={60}
+                      paddingAngle={3}
+                      dataKey="value"
+                      stroke="white"
+                      strokeWidth={3}
+                      cornerRadius={6}
+                    >
+                      {difficultyData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Pie>
+                    <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+              {/* Center donut hole — inset shadow gives depth/concave feel */}
+              <div className="absolute flex flex-col items-center justify-center pointer-events-none" style={{
+                width: '70px', height: '70px', borderRadius: '50%',
+                background: 'radial-gradient(circle at 40% 35%, #ffffff 0%, #f1f5f9 100%)',
+                boxShadow: 'inset 0 3px 8px rgba(0,0,0,0.10), inset 0 1px 3px rgba(0,0,0,0.06)',
+              }}>
+                <span className="text-xl font-bold text-[#0B1F3A] leading-none">127</span>
+                <span className="text-[9px] text-gray-400 font-bold uppercase tracking-wide mt-0.5">Solved</span>
               </div>
             </div>
 
-            <div className="flex flex-col gap-4 w-full pl-6">
+            <div className="flex flex-col gap-4 w-full pl-4">
               {difficultyData.map(d => (
                 <div key={d.name} className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-2">
-                    <span className="h-2.5 w-2.5 rounded-full shadow-sm" style={{ backgroundColor: d.color }}></span>
+                    <span className="h-3 w-3 rounded-full shrink-0" style={{
+                      backgroundColor: d.color,
+                      boxShadow: `0 2px 6px ${d.color}66, inset 0 1px 2px rgba(255,255,255,0.6), inset 0 -1px 2px rgba(0,0,0,0.1)`,
+                    }}></span>
                     <span className="text-sm font-bold text-[#0B1F3A]">{d.name}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-sm font-bold text-[#0B1F3A]">{d.value}</span>
-                    <span className="text-[11px] font-bold px-1.5 py-0.5 rounded bg-gray-100 text-gray-500 w-10 text-center">{d.percent}</span>
+                    <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full text-center"
+                      style={{
+                        backgroundColor: `${d.color}15`,
+                        color: d.color,
+                        border: `1px solid ${d.color}40`,
+                        boxShadow: `0 2px 6px ${d.color}20, inset 0 1px 0 rgba(255,255,255,0.8)`,
+                        minWidth: '44px',
+                      }}>{d.percent}</span>
                   </div>
                 </div>
               ))}
@@ -253,7 +280,7 @@ export default function CodingAnalytics() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 relative z-10">
         
         {/* Problem Solving Trend */}
-        <div className="bg-white p-6 rounded-[24px] shadow-sm border border-gray-100 flex flex-col">
+        <div className="bg-white p-6 rounded-[16px] shadow-sm border border-gray-100 flex flex-col">
           <div className="flex justify-between items-center mb-6">
             <div className="flex items-center gap-3">
               <LineChartIcon className="h-6 w-6 text-blue-400" />
@@ -287,7 +314,7 @@ export default function CodingAnalytics() {
         </div>
 
         {/* Recently Solved Problems */}
-        <div className="bg-gradient-to-br from-[#FDFBF2]/60 to-white p-6 rounded-[24px] shadow-sm border border-[#E5C76B]/30 flex flex-col">
+        <div className="bg-gradient-to-br from-[#FDFBF2]/60 to-white p-6 rounded-[16px] shadow-sm border border-[#E5C76B]/30 flex flex-col">
           <div className="flex justify-between items-center mb-6">
             <div className="flex items-center gap-3">
               <Clock className="h-5 w-5 text-[#0B1F3A]" />
@@ -359,3 +386,7 @@ function PieChartIcon(props: any) {
 function LineChartIcon(props: any) {
   return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
 }
+
+
+
+

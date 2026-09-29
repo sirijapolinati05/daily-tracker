@@ -79,10 +79,10 @@ export default function CodingCalendar() {
       {/* 4 Stat Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 relative z-10">
         {/* Total Days Coded */}
-        <div className="bg-gradient-to-br from-blue-50/60 to-white p-5 shadow-sm border border-gray-100 flex flex-col justify-between rounded-[24px] h-32">
+        <div className="bg-gradient-to-br from-blue-50/60 to-white p-5 shadow-sm border border-gray-100 flex flex-col justify-between rounded-[16px] h-32">
           <div className="flex justify-between items-start w-full">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-[16px] badge-3d-blue flex items-center justify-center text-blue-600 shrink-0">
+              <div className="h-9 w-9 rounded-full badge-3d-blue flex items-center justify-center text-blue-600 shrink-0">
                 <Code2 className="h-6 w-6" />
               </div>
               <div>
@@ -104,10 +104,10 @@ export default function CodingCalendar() {
         </div>
 
         {/* Total Hours */}
-        <div className="bg-gradient-to-br from-emerald-50/60 to-white p-5 shadow-sm border border-gray-100 flex flex-col justify-between rounded-[24px] h-32">
+        <div className="bg-gradient-to-br from-emerald-50/60 to-white p-5 shadow-sm border border-gray-100 flex flex-col justify-between rounded-[16px] h-32">
           <div className="flex justify-between items-start w-full">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-[16px] badge-3d-green flex items-center justify-center text-green-600 shrink-0">
+              <div className="h-9 w-9 rounded-full badge-3d-green flex items-center justify-center text-green-600 shrink-0">
                 <Clock className="h-6 w-6" />
               </div>
               <div>
@@ -129,10 +129,10 @@ export default function CodingCalendar() {
         </div>
 
         {/* Current Streak */}
-        <div className="bg-gradient-to-br from-yellow-50/60 to-white p-5 shadow-sm border border-gray-100 flex flex-col justify-between rounded-[24px] h-32">
+        <div className="bg-gradient-to-br from-yellow-50/60 to-white p-5 shadow-sm border border-gray-100 flex flex-col justify-between rounded-[16px] h-32">
           <div className="flex justify-between items-start w-full">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-[16px] badge-3d-yellow flex items-center justify-center text-yellow-600 shrink-0">
+              <div className="h-9 w-9 rounded-full badge-3d-yellow flex items-center justify-center text-yellow-600 shrink-0">
                 <Trophy className="h-6 w-6" />
               </div>
               <div>
@@ -154,10 +154,10 @@ export default function CodingCalendar() {
         </div>
 
         {/* Longest Streak */}
-        <div className="bg-gradient-to-br from-purple-50/60 to-white p-5 shadow-sm border border-gray-100 flex flex-col justify-between rounded-[24px] h-32">
+        <div className="bg-gradient-to-br from-purple-50/60 to-white p-5 shadow-sm border border-gray-100 flex flex-col justify-between rounded-[16px] h-32">
           <div className="flex justify-between items-start w-full">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-[16px] badge-3d-purple flex items-center justify-center text-purple-600 shrink-0">
+              <div className="h-9 w-9 rounded-full badge-3d-purple flex items-center justify-center text-purple-600 shrink-0">
                 <Target className="h-6 w-6" />
               </div>
               <div>
@@ -181,7 +181,7 @@ export default function CodingCalendar() {
 
       {/* Heatmap - Full Width Row */}
       <div className="mb-6 relative z-10">
-        <div className="bg-white p-8 rounded-[24px] shadow-sm border border-gray-100">
+        <div className="bg-white p-8 rounded-[16px] shadow-sm border border-gray-100">
           {/* Header */}
           <div className="flex justify-between items-center mb-4">
             <div className="flex items-center gap-3">
@@ -261,7 +261,7 @@ export default function CodingCalendar() {
       {/* Second Row: Daily Activity (wider) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6 relative z-10">
         {/* Daily Activity Details - timeline style */}
-        <div className="bg-white p-6 rounded-[24px] shadow-sm border border-gray-100 flex flex-col">
+        <div className="bg-white p-6 rounded-[16px] shadow-sm border border-gray-100 flex flex-col">
           <div className="flex justify-between items-center mb-5 border-b border-gray-100 pb-4">
             <div className="flex items-center gap-3">
               <Calendar className="h-5 w-5 text-[#D4AF37]" />
@@ -275,8 +275,8 @@ export default function CodingCalendar() {
 
           <div className="flex-1 flex flex-col gap-3">
             {/* Task 1 */}
-            <div className="flex gap-3 items-start p-3 rounded-xl bg-green-50/50 border border-green-100">
-              <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center shrink-0">
+            <div className="flex gap-3 items-start p-3 rounded-[16px] bg-green-50/50 border border-green-100">
+              <div className="h-9 w-9 rounded-[16px] bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center shrink-0">
                 <Code2 className="h-4 w-4 text-blue-600" />
               </div>
               <div className="flex-1 min-w-0">
@@ -294,8 +294,8 @@ export default function CodingCalendar() {
             </div>
 
             {/* Task 2 */}
-            <div className="flex gap-3 items-start p-3 rounded-xl bg-yellow-50/50 border border-yellow-100">
-              <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center shrink-0">
+            <div className="flex gap-3 items-start p-3 rounded-[16px] bg-yellow-50/50 border border-yellow-100">
+              <div className="h-9 w-9 rounded-[16px] bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center shrink-0">
                 <BookOpen className="h-4 w-4 text-purple-600" />
               </div>
               <div className="flex-1 min-w-0">
@@ -313,8 +313,8 @@ export default function CodingCalendar() {
             </div>
 
             {/* Task 3 */}
-            <div className="flex gap-3 items-start p-3 rounded-xl bg-gray-50/50 border border-gray-100">
-              <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-amber-100 to-yellow-200 flex items-center justify-center shrink-0">
+            <div className="flex gap-3 items-start p-3 rounded-[16px] bg-gray-50/50 border border-gray-100">
+              <div className="h-9 w-9 rounded-[16px] bg-gradient-to-br from-amber-100 to-yellow-200 flex items-center justify-center shrink-0">
                 <Target className="h-4 w-4 text-amber-600" />
               </div>
               <div className="flex-1 min-w-0">
@@ -331,12 +331,12 @@ export default function CodingCalendar() {
             </div>
           </div>
           
-          <button className="w-full mt-4 py-2.5 bg-gradient-to-r from-[#FDE68A] to-[#F59E0B] hover:from-[#F59E0B] hover:to-[#D97706] text-white font-bold rounded-xl transition-colors shadow-sm flex justify-center items-center gap-2 text-sm">
+          <button className="w-full mt-4 py-2.5 bg-gradient-to-r from-[#FDE68A] to-[#F59E0B] hover:from-[#F59E0B] hover:to-[#D97706] text-white font-bold rounded-[16px] transition-colors shadow-sm flex justify-center items-center gap-2 text-sm">
             View Full Day Details <ArrowRight className="h-4 w-4" />
           </button>
         </div>
         {/* Best Coding Day by Weekday */}
-        <div className="bg-white p-6 rounded-[24px] shadow-sm border border-gray-100 flex flex-col">
+        <div className="bg-white p-6 rounded-[16px] shadow-sm border border-gray-100 flex flex-col">
           <div className="flex items-center gap-3 mb-6">
             <div className="h-9 w-9 rounded-full bg-gradient-to-br from-[#FEF3C7] to-[#FDE68A] flex items-center justify-center text-[#D4AF37] shadow-[inset_2px_2px_4px_white] border border-white">
               <Trophy className="h-4 w-4" />
@@ -358,8 +358,8 @@ export default function CodingCalendar() {
             ].map(({ day, hours, color }) => (
               <div key={day} className="flex items-center gap-3">
                 <span className="text-[10px] font-bold text-gray-400 w-6 shrink-0">{day}</span>
-                <div className="flex-1 bg-gray-100 rounded-full h-2">
-                  <div className={`h-2 rounded-full ${color} transition-all`} style={{ width: `${(hours / 4) * 100}%` }}></div>
+                <div className="flex-1 bg-gray-100 rounded-full h-2 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-gray-200/50 p-[1px]">
+                  <div className={`h-full rounded-full ${color} transition-all shadow-[0_1px_2px_rgba(0,0,0,0.2),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-white/40`} style={{ width: `${(hours / 4) * 100}%` }}></div>
                 </div>
                 <span className="text-[10px] font-bold text-gray-500 w-7 text-right">{hours}h</span>
               </div>
@@ -371,7 +371,7 @@ export default function CodingCalendar() {
       {/* Bottom Row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 relative z-10">
         {/* Monthly Trend */}
-        <div className="bg-white p-6 rounded-[24px] shadow-sm border border-gray-100">
+        <div className="bg-white p-6 rounded-[16px] shadow-sm border border-gray-100">
           <div className="flex justify-between items-center mb-6">
             <div className="flex items-center gap-3">
               <BarChartIcon className="h-5 w-5 text-[#D4AF37]" />
@@ -401,53 +401,76 @@ export default function CodingCalendar() {
         </div>
 
         {/* Activity Breakdown */}
-        <div className="bg-white p-6 rounded-[24px] shadow-sm border border-gray-100 flex flex-col">
-          <div className="flex justify-between items-center mb-6">
+        <div className="bg-gradient-to-br from-slate-50 to-white p-6 rounded-[16px] border border-gray-100 flex flex-col"
+          style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.95)' }}>
+          <div className="flex justify-between items-start mb-6">
             <div className="flex items-center gap-3">
-              <Calendar className="h-5 w-5 text-[#D4AF37]" />
-              <h3 className="font-bold text-[#0B1F3A]">Activity Breakdown</h3>
+              <Calendar className="h-6 w-6 text-[#D4AF37]" />
+              <div>
+                <h3 className="text-lg font-bold text-[#0B1F3A]">Activity Breakdown</h3>
+                <p className="text-xs text-gray-500 font-medium mt-1">Distribution of your coding time.</p>
+              </div>
             </div>
-            <button className="flex items-center gap-2 px-3 py-1.5 border border-gray-200 rounded-md text-xs font-bold text-gray-600">
+            <button className="flex items-center gap-2 px-3 py-1.5 border border-gray-200 bg-white rounded-md text-xs font-bold text-gray-600 shadow-sm">
               This Year <ChevronDown className="h-3.5 w-3.5" />
             </button>
           </div>
           <div className="flex items-center justify-between flex-1">
-            <div className="h-32 w-32 relative shrink-0">
-              <ResponsiveContainer width="100%" height="100%">
-                <PieChart>
-                  <Pie
-                    data={breakdownData}
-                    innerRadius={45}
-                    outerRadius={60}
-                    paddingAngle={4}
-                    dataKey="value"
-                    stroke="none"
-                  >
-                    {breakdownData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Tooltip />
-                </PieChart>
-              </ResponsiveContainer>
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
+            {/* 3D Bulged Donut Chart — no platform bg, only chart */}
+            <div className="relative shrink-0 flex items-center justify-center" style={{ width: '140px', height: '140px' }}>
+              {/* Chart with drop-shadow for 3D bulged slices */}
+              <div className="absolute inset-0" style={{ filter: 'drop-shadow(0 6px 18px rgba(0,0,0,0.20)) drop-shadow(0 2px 5px rgba(0,0,0,0.14))' }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      data={breakdownData}
+                      innerRadius={42}
+                      outerRadius={60}
+                      paddingAngle={3}
+                      dataKey="value"
+                      stroke="white"
+                      strokeWidth={3}
+                      cornerRadius={6}
+                    >
+                      {breakdownData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Pie>
+                    <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+              {/* Center donut hole — inset shadow gives depth/concave feel */}
+              <div className="absolute flex flex-col items-center justify-center pointer-events-none" style={{
+                width: '70px', height: '70px', borderRadius: '50%',
+                background: 'radial-gradient(circle at 40% 35%, #ffffff 0%, #f1f5f9 100%)',
+                boxShadow: 'inset 0 3px 8px rgba(0,0,0,0.10), inset 0 1px 3px rgba(0,0,0,0.06)',
+              }}>
                 <span className="text-xl font-bold text-[#0B1F3A] leading-none">286h</span>
-                <span className="text-[10px] text-gray-400 font-bold mt-1">Total</span>
+                <span className="text-[9px] text-gray-400 font-bold uppercase tracking-wide mt-0.5">Total</span>
               </div>
             </div>
             
-            <div className="flex flex-col gap-3 w-full pl-6">
+            <div className="flex flex-col gap-4 w-full pl-4">
               {breakdownData.map(d => (
                 <div key={d.name} className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: d.color }}></span>
-                    <span className="text-xs font-bold text-[#0B1F3A]">{d.name}</span>
+                    <span className="h-3 w-3 rounded-full shrink-0" style={{
+                      backgroundColor: d.color,
+                      boxShadow: `0 2px 6px ${d.color}66, inset 0 1px 2px rgba(255,255,255,0.6), inset 0 -1px 2px rgba(0,0,0,0.1)`,
+                    }}></span>
+                    <span className="text-sm font-bold text-[#0B1F3A]">{d.name}</span>
                   </div>
-                  <div className="flex gap-4">
-                    <span className="text-xs text-gray-400 font-bold w-6 text-right">
-                      {Math.round((d.value / 285) * 100)}%
-                    </span>
-                    <span className="text-xs font-bold text-gray-600 w-8 text-right">{d.value}h</span>
+                  <div className="flex items-center gap-3">
+                    <span className="text-sm font-bold text-[#0B1F3A]">{d.value}h</span>
+                    <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full text-center"
+                      style={{
+                        backgroundColor: `${d.color}15`,
+                        color: d.color,
+                        border: `1px solid ${d.color}40`,
+                        boxShadow: `0 2px 6px ${d.color}20, inset 0 1px 0 rgba(255,255,255,0.8)`,
+                        minWidth: '44px',
+                      }}>{Math.round((d.value / 285) * 100)}%</span>
                   </div>
                 </div>
               ))}
@@ -458,3 +481,5 @@ export default function CodingCalendar() {
     </div>
   )
 }
+
+
