@@ -137,4 +137,17 @@
 .thin-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}@layer utilities {
+  .badge-3d-green {
+    @apply shadow-[inset_1px_1px_2px_white,inset_-1px_-1px_2px_rgba(0,0,0,0.05),2px_2px_4px_rgba(34,197,94,0.2)] bg-gradient-to-br from-green-50 to-green-100 border border-white text-green-700;
+  }
+  .badge-3d-orange {
+    @apply shadow-[inset_1px_1px_2px_white,inset_-1px_-1px_2px_rgba(0,0,0,0.05),2px_2px_4px_rgba(249,115,22,0.2)] bg-gradient-to-br from-orange-50 to-orange-100 border border-white text-orange-700;
+  }
+  .badge-3d-red {
+    @apply shadow-[inset_1px_1px_2px_white,inset_-1px_-1px_2px_rgba(0,0,0,0.05),2px_2px_4px_rgba(239,68,68,0.2)] bg-gradient-to-br from-red-50 to-red-100 border border-white text-red-700;
+  }
+  .badge-3d-gray {
+    @apply shadow-[inset_1px_1px_2px_white,inset_-1px_-1px_2px_rgba(0,0,0,0.05),2px_2px_4px_rgba(0,0,0,0.05)] bg-gradient-to-br from-gray-50 to-gray-100 border border-white text-gray-600;
+  }
 }

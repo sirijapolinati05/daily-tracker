@@ -35,7 +35,7 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
         <div className="relative z-10 flex w-full">
           <AppSidebar />
           <div className="flex-1 flex flex-col min-w-0">
-            <header className="sticky top-0 z-10 flex h-16 items-center gap-4 bg-[#FDFBF2]/80 backdrop-blur-md px-6 shadow-sm border-b border-[#E5C76B]/20">
+            <header className="sticky top-0 z-50 flex h-16 items-center gap-4 bg-[#FDFBF2]/80 backdrop-blur-md px-6 shadow-sm border-b border-[#E5C76B]/20">
             <SidebarTrigger />
             <form onSubmit={handleSearch} className="flex items-center gap-3 text-sm text-gray-500 bg-[#F5F3EA] px-5 py-2 rounded-full flex-1 max-w-md shadow-[inset_3px_3px_6px_rgba(0,0,0,0.08),inset_-3px_-3px_6px_rgba(255,255,255,0.9)] border border-transparent">
               <Search className="h-4 w-4 opacity-70 flex-shrink-0" />
@@ -71,6 +71,7 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
 }
 
 import Dashboard from "./pages/Dashboard"
+import LeetCodeTracker from "./pages/LeetCodeTracker"
 
 function Login() {
   return (
@@ -86,69 +87,6 @@ function Login() {
   )
 }
 
-function LeetCodeTracker() {
-  return (
-    <div className="w-full">
-      <div className="flex justify-between items-center mb-6">
-        <div>
-          <h1 className="text-3xl font-bold text-[#0B1F3A]">LeetCode Tracker</h1>
-          <p className="text-gray-500 mt-1">Track your problem solving progress and notes.</p>
-        </div>
-        <button className="bg-[#0B1F3A] text-white px-4 py-2 rounded-md font-medium hover:bg-[#163D63] transition-colors">
-          + Add Problem
-        </button>
-      </div>
-      
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-        <table className="w-full text-left text-sm">
-          <thead className="bg-gray-50 border-b border-gray-200 text-gray-600">
-            <tr>
-              <th className="px-6 py-4 font-medium">Problem</th>
-              <th className="px-6 py-4 font-medium">Difficulty</th>
-              <th className="px-6 py-4 font-medium">Topic</th>
-              <th className="px-6 py-4 font-medium">Language</th>
-              <th className="px-6 py-4 font-medium">Solved Date</th>
-              <th className="px-6 py-4 font-medium text-right">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-100">
-            {/* Example row */}
-            <tr className="hover:bg-gray-50/50">
-              <td className="px-6 py-4 font-medium text-[#0B1F3A]">Two Sum</td>
-              <td className="px-6 py-4"><span className="px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">Easy</span></td>
-              <td className="px-6 py-4">Array, HashMap</td>
-              <td className="px-6 py-4">TypeScript</td>
-              <td className="px-6 py-4">Oct 01, 2026</td>
-              <td className="px-6 py-4 text-right">
-                <button className="text-gray-400 hover:text-[#D4AF37] font-medium text-sm">View</button>
-              </td>
-            </tr>
-            <tr className="hover:bg-gray-50/50">
-              <td className="px-6 py-4 font-medium text-[#0B1F3A]">LRU Cache</td>
-              <td className="px-6 py-4"><span className="px-2.5 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-700">Medium</span></td>
-              <td className="px-6 py-4">Design, Linked List</td>
-              <td className="px-6 py-4">Python</td>
-              <td className="px-6 py-4">Sep 28, 2026</td>
-              <td className="px-6 py-4 text-right">
-                <button className="text-gray-400 hover:text-[#D4AF37] font-medium text-sm">View</button>
-              </td>
-            </tr>
-            <tr className="hover:bg-gray-50/50">
-              <td className="px-6 py-4 font-medium text-[#0B1F3A]">Merge K Sorted Lists</td>
-              <td className="px-6 py-4"><span className="px-2.5 py-1 rounded-full text-xs font-medium bg-red-100 text-red-700">Hard</span></td>
-              <td className="px-6 py-4">Heap, Linked List</td>
-              <td className="px-6 py-4">Java</td>
-              <td className="px-6 py-4">Sep 25, 2026</td>
-              <td className="px-6 py-4 text-right">
-                <button className="text-gray-400 hover:text-[#D4AF37] font-medium text-sm">View</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  )
-}
 
 function PlaceholderPage({ title, description }: { title: string, description: string }) {
   return (
