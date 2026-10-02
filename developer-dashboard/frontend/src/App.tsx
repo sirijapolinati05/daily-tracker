@@ -10,7 +10,8 @@ import Settings from "./pages/Settings"
 import Goals from "./pages/Goals"
 import Learning from "./pages/Learning"
 import Expenses from "./pages/Expenses"
-import ExpenseAnalytics from "./pages/ExpenseAnalytics"
+import Income from "./pages/Income"
+import FinanceAnalytics from "./pages/FinanceAnalytics"
 import Notes from "./pages/Notes"
 import Jobs from "./pages/Jobs"
 import bgImage from "@/assets/background.png"
@@ -164,8 +165,12 @@ export default function App() {
           isAuthenticated ? <DashboardLayout><Expenses /></DashboardLayout> : <Navigate to="/login" />
         } />
         
-        <Route path="/expense-analytics" element={
-          isAuthenticated ? <DashboardLayout><ExpenseAnalytics /></DashboardLayout> : <Navigate to="/login" />
+        <Route path="/income" element={
+          isAuthenticated ? <DashboardLayout><Income /></DashboardLayout> : <Navigate to="/login" />
+        } />
+        
+        <Route path="/finance-analytics" element={
+          isAuthenticated ? <DashboardLayout><FinanceAnalytics /></DashboardLayout> : <Navigate to="/login" />
         } />
         
         <Route path="/notes" element={

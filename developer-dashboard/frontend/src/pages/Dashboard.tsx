@@ -1,27 +1,44 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Code2, Clock, Target, DollarSign, Calendar, ChevronRight, CheckCircle2, Circle, Trophy } from "lucide-react"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts'
 import bgImage from '@/assets/background.png'
 
-const activityData = [
-  { name: 'Wed', solved: 7 },
-  { name: 'Thu', solved: 11 },
-  { name: 'Fri', solved: 4 },
-  { name: 'Sat', solved: 9 },
-  { name: 'Sun', solved: 8 },
-  { name: 'Mon', solved: 13 },
-  { name: 'Tue', solved: 18 },
-]
-
-const sparklineData1 = [
-  { value: 10 }, { value: 15 }, { value: 8 }, { value: 12 }, { value: 20 }, { value: 15 }, { value: 25 }
-]
-
-const sparklineData2 = [
-  { value: 5 }, { value: 10 }, { value: 15 }, { value: 12 }, { value: 18 }, { value: 25 }, { value: 20 }
-]
-
 export default function Dashboard() {
+  const [stats, setStats] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Check if token exists, since we use get_current_user in the backend
+    const token = localStorage.getItem("token") || ""; 
+    
+    // For now we assume auth is handled or we pass a dummy token if we bypassed auth
+    // Update the port/URL based on the backend configuration
+    fetch("http://localhost:8000/api/v1/dashboard/stats", {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    })
+      .then(res => res.json())
+      .then(data => {
+        setStats(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Failed to fetch dashboard stats", err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div className="flex justify-center items-center h-full min-h-screen">Loading dashboard...</div>;
+  }
+
+  // Fallback to empty data if stats failed to load
+  const data = stats || {
+    leetcode_solved: 0, leetcode_diff: 0, productivity_hours: 0, productivity_diff: 0,
+    goals_completed: 0, goals_total: 1, monthly_expenses: 0, budget_remaining: 0,
+    activity_data: [], sparkline_leetcode: [], sparkline_productivity: [], recent_leetcode: []
+  };
   return (
     <div className="w-full space-y-6">
       
@@ -68,12 +85,12 @@ export default function Dashboard() {
           </div>
           <div className="flex items-end justify-between mt-1">
             <div>
-              <h3 className="text-3xl font-bold text-[#0B1F3A]">124</h3>
-              <p className="text-[11px] text-gray-500 mt-0.5"><span className="text-green-500 font-medium">↑ +4</span> from yesterday</p>
+              <h3 className="text-3xl font-bold text-[#0B1F3A]">{data.leetcode_solved}</h3>
+              <p className="text-[11px] text-gray-500 mt-0.5"><span className="text-green-500 font-medium">↑ +{data.leetcode_diff}</span> from yesterday</p>
             </div>
             <div className="h-8 w-16">
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={sparklineData1}>
+                <AreaChart data={data.sparkline_leetcode}>
                   <defs>
                     <linearGradient id="colorBlue" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3}/>
@@ -99,12 +116,12 @@ export default function Dashboard() {
           </div>
           <div className="flex items-end justify-between mt-1">
             <div>
-              <h3 className="text-3xl font-bold text-[#0B1F3A]">6.5h</h3>
-              <p className="text-[11px] text-gray-500 mt-0.5"><span className="text-green-500 font-medium">↑ +1.2h</span> from yesterday</p>
+              <h3 className="text-3xl font-bold text-[#0B1F3A]">{data.productivity_hours}h</h3>
+              <p className="text-[11px] text-gray-500 mt-0.5"><span className="text-green-500 font-medium">↑ +{data.productivity_diff}h</span> from yesterday</p>
             </div>
             <div className="h-8 w-16">
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={sparklineData2}>
+                <AreaChart data={data.sparkline_productivity}>
                   <defs>
                     <linearGradient id="colorPurple" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="5%" stopColor="#9333ea" stopOpacity={0.3}/>
@@ -129,10 +146,10 @@ export default function Dashboard() {
             <ChevronRight className="h-4 w-4 text-gray-400" />
           </div>
           <div className="mt-1">
-            <h3 className="text-3xl font-bold text-[#0B1F3A]">3/5</h3>
-            <p className="text-[11px] text-gray-500 mt-0.5">60% daily completion</p>
+            <h3 className="text-3xl font-bold text-[#0B1F3A]">{data.goals_completed}/{data.goals_total}</h3>
+            <p className="text-[11px] text-gray-500 mt-0.5">{Math.round((data.goals_completed / data.goals_total) * 100)}% daily completion</p>
             <div className="w-full bg-gray-100 rounded-full h-2 mt-2 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-gray-200/50 p-[1px]">
-              <div className="bg-gradient-to-r from-green-400 to-green-500 h-full rounded-full shadow-[0_1px_2px_rgba(34,197,94,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-green-300" style={{ width: '60%' }}></div>
+              <div className="bg-gradient-to-r from-green-400 to-green-500 h-full rounded-full shadow-[0_1px_2px_rgba(34,197,94,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-green-300" style={{ width: `${Math.round((data.goals_completed / data.goals_total) * 100)}%` }}></div>
             </div>
           </div>
         </div>
@@ -148,10 +165,10 @@ export default function Dashboard() {
             <ChevronRight className="h-4 w-4 text-gray-400" />
           </div>
           <div className="mt-1">
-            <h3 className="text-3xl font-bold text-[#0B1F3A]">₹1,245</h3>
-            <p className="text-[11px] text-gray-500 mt-0.5">₹255 remaining budget</p>
+            <h3 className="text-3xl font-bold text-[#0B1F3A]">₹{data.monthly_expenses.toLocaleString()}</h3>
+            <p className="text-[11px] text-gray-500 mt-0.5">₹{data.budget_remaining.toLocaleString()} remaining budget</p>
             <div className="w-full bg-gray-100 rounded-full h-2 mt-2 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)] border border-gray-200/50 p-[1px] flex">
-              <div className="bg-gradient-to-r from-orange-400 to-orange-500 h-full rounded-full shadow-[0_1px_2px_rgba(249,115,22,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-orange-300" style={{ width: '80%' }}></div>
+              <div className="bg-gradient-to-r from-orange-400 to-orange-500 h-full rounded-full shadow-[0_1px_2px_rgba(249,115,22,0.4),inset_0_1px_1px_rgba(255,255,255,0.6)] border-t border-orange-300" style={{ width: `${Math.min(100, Math.round((data.monthly_expenses / (data.monthly_expenses + data.budget_remaining)) * 100))}%` }}></div>
             </div>
           </div>
         </div>
@@ -179,7 +196,7 @@ export default function Dashboard() {
           
           <div className="h-64 w-full">
             <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={activityData} margin={{ top: 10, right: 30, left: -20, bottom: 0 }}>
+              <AreaChart data={data.activity_data} margin={{ top: 10, right: 30, left: -20, bottom: 0 }}>
                 <defs>
                   <linearGradient id="colorActivity" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#D4AF37" stopOpacity={0.2}/>
@@ -212,62 +229,35 @@ export default function Dashboard() {
           </div>
 
           <div className="space-y-5 flex-1">
-            
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
-                <div>
-                  <h4 className="font-bold text-[#0B1F3A] text-sm">Two Sum</h4>
-                  <p className="text-xs text-gray-500 mt-0.5">Easy • Array, Hash Table</p>
+            {data.recent_leetcode.map((problem: any, index: number) => (
+              <React.Fragment key={problem.id}>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    {problem.status === "Solved" ? (
+                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
+                    ) : (
+                      <Circle className="h-5 w-5 text-gray-300 shrink-0" />
+                    )}
+                    <div>
+                      <h4 className="font-bold text-[#0B1F3A] text-sm">{problem.name}</h4>
+                      <p className="text-xs text-gray-500 mt-0.5">{problem.difficulty} • {problem.topic}</p>
+                    </div>
+                  </div>
+                  <div className="text-right flex items-center gap-2">
+                    <div>
+                      <p className={`text-xs font-bold ${problem.status === "Solved" ? "text-green-600" : "text-gray-500 font-medium"}`}>
+                        {problem.status}
+                      </p>
+                      <p className="text-[10px] text-gray-400 mt-0.5">{problem.solved_date}</p>
+                    </div>
+                    <ChevronRight className="h-4 w-4 text-gray-300" />
+                  </div>
                 </div>
-              </div>
-              <div className="text-right flex items-center gap-2">
-                <div>
-                  <p className="text-xs font-bold text-green-600">Solved</p>
-                  <p className="text-[10px] text-gray-400 mt-0.5">Today, 10:24 AM</p>
-                </div>
-                <ChevronRight className="h-4 w-4 text-gray-300" />
-              </div>
-            </div>
-            
-            <div className="h-px bg-gray-100 w-full"></div>
-
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
-                <div>
-                  <h4 className="font-bold text-[#0B1F3A] text-sm">LRU Cache</h4>
-                  <p className="text-xs text-gray-500 mt-0.5">Medium • Linked List, Hash Table</p>
-                </div>
-              </div>
-              <div className="text-right flex items-center gap-2">
-                <div>
-                  <p className="text-xs font-bold text-green-600">Solved</p>
-                  <p className="text-[10px] text-gray-400 mt-0.5">Yesterday, 08:17 PM</p>
-                </div>
-                <ChevronRight className="h-4 w-4 text-gray-300" />
-              </div>
-            </div>
-
-            <div className="h-px bg-gray-100 w-full"></div>
-
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <Circle className="h-5 w-5 text-gray-300 shrink-0" />
-                <div>
-                  <h4 className="font-bold text-[#0B1F3A] text-sm">Group Anagrams</h4>
-                  <p className="text-xs text-gray-500 mt-0.5">Medium • String, Hash Table</p>
-                </div>
-              </div>
-              <div className="text-right flex items-center gap-2">
-                <div>
-                  <p className="text-xs font-medium text-gray-500">Not Solved</p>
-                  <p className="text-[10px] text-gray-400 mt-0.5">Sep 28, 2026</p>
-                </div>
-                <ChevronRight className="h-4 w-4 text-gray-300" />
-              </div>
-            </div>
-
+                {index < data.recent_leetcode.length - 1 && (
+                  <div className="h-px bg-gray-100 w-full"></div>
+                )}
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </div>

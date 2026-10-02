@@ -24,9 +24,17 @@ if settings.BACKEND_CORS_ORIGINS:
         allow_headers=["*"],
     )
 
-from app.routers import auth
+from app.routers import auth, dashboard, note, job, expense, income, learning, goal, activity
 
 app.include_router(auth.router, prefix=settings.API_V1_STR)
+app.include_router(dashboard.router, prefix=settings.API_V1_STR)
+app.include_router(note.router, prefix=settings.API_V1_STR)
+app.include_router(job.router, prefix=settings.API_V1_STR)
+app.include_router(expense.router, prefix=settings.API_V1_STR)
+app.include_router(income.router, prefix=settings.API_V1_STR)
+app.include_router(learning.router, prefix=settings.API_V1_STR)
+app.include_router(goal.router, prefix=settings.API_V1_STR)
+app.include_router(activity.router, prefix=settings.API_V1_STR)
 
 @app.get("/")
 def read_root():

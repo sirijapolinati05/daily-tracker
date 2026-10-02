@@ -16,4 +16,5 @@ class User(BaseModel):
     goals = relationship("Goal", back_populates="user", cascade="all, delete-orphan")
     learning_items = relationship("LearningItem", back_populates="user", cascade="all, delete-orphan")
     expenses = relationship("Expense", back_populates="user", cascade="all, delete-orphan")
+    incomes = relationship("Income", back_populates="user", cascade="all, delete-orphan")
     notes = relationship("Note", back_populates="user", cascade="all, delete-orphan")

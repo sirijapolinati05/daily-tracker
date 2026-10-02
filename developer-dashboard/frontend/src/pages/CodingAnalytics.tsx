@@ -32,6 +32,18 @@ const sparklineGreen = [{v: 1}, {v: 2}, {v: 1}, {v: 3}, {v: 4}, {v: 7}, {v: 9}]
 const sparklinePurple = [{v: 3}, {v: 5}, {v: 4}, {v: 6}, {v: 7}, {v: 12}, {v: 15}]
 const sparklineGold = [{v: 2}, {v: 4}, {v: 3}, {v: 7}, {v: 5}, {v: 10}, {v: 12}]
 
+
+const CustomPieTooltip = ({ active, payload }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="font-extrabold text-[#0B1F3A] text-[13px] pointer-events-none whitespace-nowrap -translate-x-1/2" style={{ textShadow: '0 2px 10px rgba(255,255,255,0.9), 0 0 5px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1)' }}>
+        {payload[0].name}: {payload[0].name.includes('LeetCode') || payload[0].name === 'Frontend' ? '' : ''}{payload[0].value.toLocaleString()}
+      </div>
+    )
+  }
+  return null
+}
+
 export default function CodingAnalytics() {
   return (
     <div className="w-full relative min-h-screen">
@@ -216,7 +228,7 @@ export default function CodingAnalytics() {
             {/* 3D Bulged Donut Chart — no platform bg, only chart */}
             <div className="relative shrink-0 flex items-center justify-center" style={{ width: '140px', height: '140px' }}>
               {/* Chart with drop-shadow for 3D bulged slices */}
-              <div className="absolute inset-0" style={{ filter: 'drop-shadow(0 6px 18px rgba(0,0,0,0.20)) drop-shadow(0 2px 5px rgba(0,0,0,0.14))' }}>
+              <div className="absolute inset-0 z-10" style={{ filter: 'drop-shadow(0 6px 18px rgba(0,0,0,0.20)) drop-shadow(0 2px 5px rgba(0,0,0,0.14))' }}>
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie
@@ -233,7 +245,7 @@ export default function CodingAnalytics() {
                         <Cell key={`cell-${index}`} fill={entry.color} />
                       ))}
                     </Pie>
-                    <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+                      <Tooltip content={<CustomPieTooltip />} cursor={{ fill: 'transparent' }} position={{ x: 80, y: -10 }} />
                   </PieChart>
                 </ResponsiveContainer>
               </div>

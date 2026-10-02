@@ -55,8 +55,9 @@ const data = {
     {
       title: "Finance",
       items: [
+        { title: "Income", url: "/income", icon: Wallet },
         { title: "Expenses", url: "/expenses", icon: Wallet },
-        { title: "Expense Analytics", url: "/expense-analytics", icon: LineChart },
+        { title: "Analytics", url: "/finance-analytics", icon: LineChart },
       ],
     },
     {

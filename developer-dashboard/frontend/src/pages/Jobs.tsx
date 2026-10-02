@@ -101,8 +101,8 @@ export default function Jobs() {
           <h1 className="text-4xl font-bold text-[#0B1F3A]">Jobs</h1>
           <p className="text-gray-500 mt-2 font-medium">Track, manage and prepare for your dream opportunities.</p>
         </div>
-        <button onClick={() => setShowAddJobModal(true)} className="px-5 py-2.5 bg-[#897127] text-white rounded-[16px] font-bold text-sm hover:bg-[#6c591e] flex items-center gap-2 shadow-sm">
-          <Plus className="h-4 w-4" /> Add Job
+        <button onClick={() => setShowAddJobModal(true)} className="bg-gradient-to-br from-[#D4AF37] to-[#9A7D3C] text-white px-6 py-2.5 rounded-[16px] font-bold shadow-[inset_2px_2px_4px_rgba(255,255,255,0.4),inset_-2px_-2px_4px_rgba(0,0,0,0.2),4px_4px_10px_rgba(154,125,60,0.4)] border border-[#E5C76B]/50 hover:brightness-110 active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2),inset_-2px_-2px_4px_rgba(255,255,255,0.2)] transition-all flex items-center gap-2">
+          <span className="text-lg leading-none mt-[-2px]">+</span> Add Job
         </button>
       </div>
 

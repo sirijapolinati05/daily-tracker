@@ -88,6 +88,18 @@ const goals = [
   }
 ]
 
+
+const CustomPieTooltip = ({ active, payload }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="font-extrabold text-[#0B1F3A] text-[13px] pointer-events-none whitespace-nowrap -translate-x-1/2" style={{ textShadow: '0 2px 10px rgba(255,255,255,0.9), 0 0 5px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1)' }}>
+        {payload[0].name}: {payload[0].name.includes('LeetCode') || payload[0].name === 'Frontend' ? '' : ''}{payload[0].value.toLocaleString()}
+      </div>
+    )
+  }
+  return null
+}
+
 export default function Goals() {
   const [showAddModal, setShowAddModal] = useState(false)
 
@@ -104,8 +116,8 @@ export default function Goals() {
           <p className="text-gray-500 mt-2 font-medium">Set targets, track progress and stay consistent.</p>
         </div>
         <div className="flex gap-3">
-          <button onClick={() => setShowAddModal(true)} className="px-5 py-2.5 bg-[#897127] text-white rounded-[16px] font-bold text-sm hover:bg-[#6c591e] flex items-center gap-2 shadow-sm">
-            <Plus className="h-4 w-4" /> Create Goal
+          <button onClick={() => setShowAddModal(true)} className="bg-gradient-to-br from-[#D4AF37] to-[#9A7D3C] text-white px-6 py-2.5 rounded-[16px] font-bold shadow-[inset_2px_2px_4px_rgba(255,255,255,0.4),inset_-2px_-2px_4px_rgba(0,0,0,0.2),4px_4px_10px_rgba(154,125,60,0.4)] border border-[#E5C76B]/50 hover:brightness-110 active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2),inset_-2px_-2px_4px_rgba(255,255,255,0.2)] transition-all flex items-center gap-2">
+            <span className="text-lg leading-none mt-[-2px]">+</span> Create Goal
           </button>
         </div>
       </div>
@@ -323,7 +335,7 @@ export default function Goals() {
           
           <div className="flex items-center justify-between flex-1">
             <div className="relative shrink-0 flex items-center justify-center" style={{ width: '140px', height: '140px' }}>
-              <div className="absolute inset-0" style={{ filter: 'drop-shadow(0 6px 18px rgba(0,0,0,0.20)) drop-shadow(0 2px 5px rgba(0,0,0,0.14))' }}>
+              <div className="absolute inset-0 z-10" style={{ filter: 'drop-shadow(0 6px 18px rgba(0,0,0,0.20)) drop-shadow(0 2px 5px rgba(0,0,0,0.14))' }}>
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie
@@ -340,7 +352,7 @@ export default function Goals() {
                         <Cell key={`cell-${index}`} fill={entry.color} />
                       ))}
                     </Pie>
-                    <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+                      <Tooltip content={<CustomPieTooltip />} cursor={{ fill: 'transparent' }} position={{ x: 80, y: -10 }} />
                   </PieChart>
                 </ResponsiveContainer>
               </div>

@@ -26,6 +26,18 @@ function BarChartIcon(props: any) {
   return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
 }
 
+
+const CustomPieTooltip = ({ active, payload }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="font-extrabold text-[#0B1F3A] text-[13px] pointer-events-none whitespace-nowrap -translate-x-1/2" style={{ textShadow: '0 2px 10px rgba(255,255,255,0.9), 0 0 5px rgba(255,255,255,1), 0 0 2px rgba(255,255,255,1)' }}>
+        {payload[0].name}: {payload[0].name.includes('LeetCode') || payload[0].name === 'Frontend' ? '' : ''}{payload[0].value.toLocaleString()}
+      </div>
+    )
+  }
+  return null
+}
+
 export default function CodingCalendar() {
   const [selectedDate, setSelectedDate] = useState<string>("September 28, 2026")
 
@@ -69,9 +81,9 @@ export default function CodingCalendar() {
             <span className="mr-[-40px]">Great Developers</span>
           </div>
           
-          <div className="flex bg-white rounded-md border border-gray-200 overflow-hidden shadow-sm">
-            <button className="px-6 py-2 bg-[#D4AF37] text-white font-bold text-sm">2026</button>
-            <button className="px-6 py-2 bg-white text-gray-500 font-bold text-sm hover:bg-gray-50">2025</button>
+          <div className="flex items-center gap-3">
+            <button className="bg-gradient-to-br from-[#D4AF37] to-[#9A7D3C] text-white px-6 py-2.5 rounded-[16px] font-bold shadow-[inset_2px_2px_4px_rgba(255,255,255,0.4),inset_-2px_-2px_4px_rgba(0,0,0,0.2),4px_4px_10px_rgba(154,125,60,0.4)] border border-[#E5C76B]/50 hover:brightness-110 active:shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2),inset_-2px_-2px_4px_rgba(255,255,255,0.2)] transition-all text-sm">2026</button>
+            <button className="bg-white text-gray-600 px-6 py-2.5 rounded-[16px] font-bold border border-gray-200 hover:bg-gray-50 shadow-sm transition-all text-sm">2025</button>
           </div>
         </div>
       </div>
@@ -419,7 +431,7 @@ export default function CodingCalendar() {
             {/* 3D Bulged Donut Chart — no platform bg, only chart */}
             <div className="relative shrink-0 flex items-center justify-center" style={{ width: '140px', height: '140px' }}>
               {/* Chart with drop-shadow for 3D bulged slices */}
-              <div className="absolute inset-0" style={{ filter: 'drop-shadow(0 6px 18px rgba(0,0,0,0.20)) drop-shadow(0 2px 5px rgba(0,0,0,0.14))' }}>
+              <div className="absolute inset-0 z-10" style={{ filter: 'drop-shadow(0 6px 18px rgba(0,0,0,0.20)) drop-shadow(0 2px 5px rgba(0,0,0,0.14))' }}>
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie
@@ -436,7 +448,7 @@ export default function CodingCalendar() {
                         <Cell key={`cell-${index}`} fill={entry.color} />
                       ))}
                     </Pie>
-                    <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
+                      <Tooltip content={<CustomPieTooltip />} cursor={{ fill: 'transparent' }} position={{ x: 80, y: -10 }} />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
